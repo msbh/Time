@@ -1,0 +1,81 @@
+﻿@model TimeAtten.Models.ACTIVEEMPRPT
+
+@{
+    ViewBag.Title = "Details";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ACTIVEEMPRPT</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AppUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AppUser)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pin_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pin_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Timezone_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Timezone_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HierCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HierCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desigs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desigs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Religion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Religion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.JoinDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JoinDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

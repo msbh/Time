@@ -1,0 +1,103 @@
+﻿@model TimeAtten.Models.ACTIVEEMPRPT
+
+@{
+    ViewBag.Title = "Edit";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ACTIVEEMPRPT</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AppUser)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AppUser)
+            @Html.ValidationMessageFor(model => model.AppUser)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pin_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pin_Code)
+            @Html.ValidationMessageFor(model => model.Pin_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Timezone_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Timezone_Code)
+            @Html.ValidationMessageFor(model => model.Timezone_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HierCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HierCode)
+            @Html.ValidationMessageFor(model => model.HierCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Desigs)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Desigs)
+            @Html.ValidationMessageFor(model => model.Desigs)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nation)
+            @Html.ValidationMessageFor(model => model.Nation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Religion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Religion)
+            @Html.ValidationMessageFor(model => model.Religion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EName)
+            @Html.ValidationMessageFor(model => model.EName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JoinDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JoinDate)
+            @Html.ValidationMessageFor(model => model.JoinDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

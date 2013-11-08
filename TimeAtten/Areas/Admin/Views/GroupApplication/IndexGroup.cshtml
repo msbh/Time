@@ -1,0 +1,116 @@
+﻿@model TimeAtten.Framework.Admin.GroupRoleModel
+
+
+@{
+    ViewBag.Title = "Index";
+    TimeAtten.Services.Utilities.BreadCrumbList breadcrumbs = ViewBag.BreadCrums;
+    string err = "";
+    try
+    {
+        err = "Caution ! " + TempData["ErrorMessage"].ToString();
+    }
+    catch (Exception ert) { }
+}
+@Html.Partial("_header")
+<!--close-Header-part-->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+    @Html.Partial("_left", "UserApplication")
+    <!-- BEGIN PAGE -->
+    <div class="page-content">
+
+        <!-- BEGIN PAGE CONTAINER-->
+        <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->
+            @{Html.RenderPartial("_breadcrumb", breadcrumbs);}
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <h4><i class="icon-edit"></i>Group Names </h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <button class="btn green">
+                                @Html.ActionLink("Add New", "GroupCreate")
+                                <i class="icon-plus"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered" id="user_table_1">
+                        <thead>
+                            <tr>
+                                <th>Group Name
+                                </th>
+                                <th>Group Description
+                                </th>
+                                <th>Permision
+                                </th>
+                                <th>Options</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var roleG in Model.IgroupRole)
+                            {
+                                <tr class="">
+
+                                    <td>
+                                        @roleG.GroupName
+                                    </td>
+                                    <td>
+                                        @roleG.Description
+                                    </td>
+                                    <td>
+                                        @{
+                                if (Model.IgroupPermision != null)
+                                {
+                                    string perm = Model.IgroupPermision.Where(itr => itr.GroupRoleId == roleG.GroupId).FirstOrDefault().Permission;
+                                            @perm
+                                }
+                                        }
+                                    </td>
+                                    <td class="edit">
+                                        @Html.ActionLink("Edit", "GroupEdit", new { id = roleG.GroupId }) |
+                                        @Html.ActionLink("Details", "GroupDetails", new { id = roleG.GroupId }) |
+                                        @Html.ActionLink("Delete", "GroupDelete", new { id = roleG.GroupId })
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+    <!-- END PAGE -->
+</div>
+<!-- END CONTAINER -->
+@Html.Partial("_footer")
+
+<script>
+    jQuery(document).ready(function () {
+        // initiate layout and plugins
+        App.setPage("table_editable");
+        App.init();
+    });
+</script>

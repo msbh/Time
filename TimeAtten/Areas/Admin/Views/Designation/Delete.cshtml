@@ -1,0 +1,144 @@
+﻿@model TimeAtten.Models.DESIGS
+@{
+    ViewBag.Title = "Designation Delete";
+    TimeAtten.Services.Utilities.BreadCrumbList breadcrumbs = ViewBag.BreadCrums;
+    string err = "";
+    try
+    {
+        if(TempData["ErrorMessage"].ToString()!=""){err = "Caution ! " + TempData["ErrorMessage"].ToString();}
+    }
+    catch (Exception ert) { }
+}
+@Html.Partial("_header")
+<!--close-Header-part-->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+    @Html.Partial("_left", "OwnerCreate")
+    <!-- BEGIN PAGE -->
+    <div class="page-content">
+
+        <!-- BEGIN PAGE CONTAINER-->
+        <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->
+            @{Html.RenderPartial("_breadcrumb", breadcrumbs);}
+            <!-- END PAGE HEADER-->
+            <!-- Form -->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <h4><i class="icon-reorder"></i>Designation Delete</h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+                <div id="err" style="color: #F80606;">
+                    @err
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm(new { @class = "form-horizontal" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <h3 class="form-section">Are you sure you want to delete this?</h3>
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Designation Code</label>
+                                    <div class="controls">
+                                        <span class="text">@Model.Desigs_Code</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Designation Name</label>
+                                    <div class="controls">
+                                        <span class="text">@Model.Description</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>                        
+                        <div class="form-actions">
+                            <button type="submit" value="Delete" class="btn blue"><i class="icon-ok"></i>Delete</button>
+                            @Html.ActionLink("Cancel", "Index", "Designation", new { @class = "btn" })
+                        </div>
+                    }
+                    <!-- END FORM-->
+                </div>
+                <!-- end form -->
+            </div>
+        </div>
+        <!-- END PAGE -->
+    </div>
+    <!-- END CONTAINER -->
+</div>
+
+@Html.Partial("_footer")
+<script>
+    jQuery(document).ready(function () {
+        // initiate layout and plugins
+        App.init();
+    });
+</script>
+<script>
+    jQuery(document).ready(function () {
+        // initiate layout and plugins
+        App.setPage("table_editable");
+        App.init();
+    });
+</script>
+<script>
+    jQuery(document).ready(function () {
+
+        // to fix chosen dropdown width in inactive hidden tab content
+        $('.advance_form_with_chosen_element').on('shown', function (e) {
+            App.initChosenSelect('.chosen_category:visible');
+        });
+
+        // initiate layout and plugins
+        App.init();
+    });
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@*@{
+    ViewBag.Title = "Delete";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>DESIGS</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desigs_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desigs_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}*@

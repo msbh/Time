@@ -1,0 +1,43 @@
+﻿@model TimeAtten.Models.UserGroup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserGroup</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GroupID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GroupID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Permision)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Permision)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UserGroupId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

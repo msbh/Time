@@ -1,0 +1,36 @@
+﻿@model TimeAtten.Models.Online
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Online</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OnlinePin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OnlinePin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OnlineTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OnlineTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ip)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,53 @@
+﻿@model TimeAtten.Models.Online
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Online</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OnlinePin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OnlinePin)
+            @Html.ValidationMessageFor(model => model.OnlinePin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OnlineTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OnlineTime)
+            @Html.ValidationMessageFor(model => model.OnlineTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ip)
+            @Html.ValidationMessageFor(model => model.ip)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,24 @@
+﻿<div id="header">
+  <h1><a href="">Zultime</a></h1>
+</div>
+<div id="user-nav" class="navbar navbar-inverse">
+          <ul class="nav">
+            <li id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages"><i class="icon icon-user"></i> <span class="text">Welcome <strong><?php echo $UserDisplayName; ?></strong></span></a></li>
+            
+            <li class="">
+              @if (User.Identity.IsAuthenticated)
+              {
+                  using (Html.BeginForm("LogOff", "../Account", FormMethod.Post, new { id = "logoutForm" }))
+                  {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                  }
+
+              }
+              else
+              {
+                <a title="" href="Account/Login"><i class="icon icon-share-alt"></i> <span class="text">Login</span></a>   
+              }
+                </li>
+          </ul>
+        </div>

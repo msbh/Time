@@ -1,0 +1,1780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{470408E4-B5AD-41DA-8012-0D0C877D4477}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimeAtten</RootNamespace>
+    <AssemblyName>TimeAtten</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminLoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuditController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CountriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeeTableController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DesignationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GroupApplicationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OnlinePeopleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OwnerCreateController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReligionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Models\AdminLoginRepository.cs" />
+    <Compile Include="Areas\Admin\Models\IAdminLoginRepository.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Framework\Admin\CompaniesSelect.cs" />
+    <Compile Include="Framework\Admin\EmployeeSelect.cs" />
+    <Compile Include="Framework\Admin\GroupRoleModel.cs" />
+    <Compile Include="Framework\Admin\PermissionSelect.cs" />
+    <Compile Include="Framework\Admin\QualificationModel.cs" />
+    <Compile Include="Framework\Admin\DesignationModel.cs" />
+    <Compile Include="Framework\Admin\ReligionModel.cs" />
+    <Compile Include="Framework\Admin\CountriesModel.cs" />
+    <Compile Include="Framework\Admin\OwnerModal.cs" />
+    <Compile Include="Framework\Admin\RegisterViewModel.cs" />
+    <Compile Include="Framework\Admin\UserApplicationSelect.cs" />
+    <Compile Include="Framework\Validations\EmailValidation.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ACTIVEEMPRPT.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuditLog.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\companyDesc.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyUser.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMP_CALENDAR.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DESIGS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMP_REC.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GroupApplication.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GroupPermission.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GroupRole.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GRPCHILD.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIERGRPS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INDTSRPT.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobStat.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LEVELS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NATION.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OVERTIME.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Permission.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Qualification.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REASONS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RELIGIONS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ROT_TZONE.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCHED_TZONE.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SUMRPT.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMPREASONS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMPTMP.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMP_TXT_DATA.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Time.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Time.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Time.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Time.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Time.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIMEZONE.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIME_SHEET.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOT_REAS.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TSHEETDATES.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TSMODLOG.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TZONERPT.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserGroup.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Application.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeekPlanner.cs">
+      <DependentUpon>Time.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ILogRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
+    <Compile Include="Services\Services\BreadcrumbService.cs" />
+    <Compile Include="Services\Services\random.cs" />
+    <Compile Include="Services\Services\SessionService.cs" />
+    <Compile Include="Services\Services\UserServices.cs" />
+    <Compile Include="Services\Utilities\BreadCrumb.cs" />
+    <Compile Include="Services\Utilities\RegEx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-daterangepicker\date.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-daterangepicker\examples.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\examples\index.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\static\js\jquery.min.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\static\js\jquery.toggle.buttons.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\static\stylesheets\bootstrap-toggle-buttons.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap-tree\css\bootstrap-tree.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap-tree\img\ajax-loader.gif" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap-tree\img\bstree-halflings.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap-tree\img\bstree-halflings_.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap-tree\js\bootstrap-tree.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\example.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\htmlexample.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\index.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\xmlexample.xml" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-custombuttons.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-custombuttonsfirstlast.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-disabletabclick.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-finishbutton.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-formvalidation.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-inverse.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-pills.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-progressbar.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic-tabsleft.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\basic.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\examples\multiple.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\index.html" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\jquery.bootstrap.wizard.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\prettify.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\prettify.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\MetTheme\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\MetTheme\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\MetTheme\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\MetTheme\breakpoints\breakpoints.js" />
+    <Content Include="Content\themes\MetTheme\breakpoints\example.html" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\chosen-sprite.png" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\chosen.css" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\chosen.jquery.js" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\chosen.jquery.min.js" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\chosen.proto.js" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\chosen.proto.min.js" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\example.jquery.html" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\example.proto.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\build-config.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\ckeditor.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\config.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\contents.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\af.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ar.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\bg.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\bn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\bs.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ca.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\cs.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\cy.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\da.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\de.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\el.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\en-au.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\en-ca.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\en-gb.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\en.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\eo.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\es.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\et.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\eu.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\fa.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\fi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\fo.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\fr-ca.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\fr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\gl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\gu.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\he.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\hi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\hr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\hu.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\is.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\it.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ja.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ka.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\km.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ko.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ku.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\lt.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\lv.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\mk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\mn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ms.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\nb.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\nl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\no.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\pl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\pt-br.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\pt.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ro.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ru.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\sk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\sl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\sr-latn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\sr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\sv.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\th.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\tr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\ug.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\uk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\vi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\zh-cn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\lang\zh.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\icons.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\ajax.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\api.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\appendto.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\assets\sample.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\divreplace.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\index.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\inlineall.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\readonly.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\replacebycode.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\sample.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\sample.js" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\tabindex.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\uicolor.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\uilanguages.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\editor.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\icons.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Content\themes\MetTheme\ckeditor\styles.js" />
+    <Content Include="Content\themes\MetTheme\clockface\CHANGELOG.txt" />
+    <Content Include="Content\themes\MetTheme\clockface\css\clockface.css" />
+    <Content Include="Content\themes\MetTheme\clockface\js\clockface.js" />
+    <Content Include="Content\themes\MetTheme\css\metro.css" />
+    <Content Include="Content\themes\MetTheme\css\style.css" />
+    <Content Include="Content\themes\MetTheme\css\style_blue.css" />
+    <Content Include="Content\themes\MetTheme\css\style_brown.css" />
+    <Content Include="Content\themes\MetTheme\css\style_default.css" />
+    <Content Include="Content\themes\MetTheme\css\style_light.css" />
+    <Content Include="Content\themes\MetTheme\css\style_purple.css" />
+    <Content Include="Content\themes\MetTheme\css\style_responsive.css" />
+    <Content Include="Content\themes\MetTheme\data-tables\DT_bootstrap.css" />
+    <Content Include="Content\themes\MetTheme\data-tables\DT_bootstrap.js" />
+    <Content Include="Content\themes\MetTheme\data-tables\images\sort_asc.png" />
+    <Content Include="Content\themes\MetTheme\data-tables\images\sort_both.png" />
+    <Content Include="Content\themes\MetTheme\data-tables\images\sort_desc.png" />
+    <Content Include="Content\themes\MetTheme\data-tables\jquery.dataTables.js" />
+    <Content Include="Content\themes\MetTheme\dropzone\css\basic.css" />
+    <Content Include="Content\themes\MetTheme\dropzone\css\dropzone.css" />
+    <Content Include="Content\themes\MetTheme\dropzone\dropzone-amd-module.js" />
+    <Content Include="Content\themes\MetTheme\dropzone\dropzone.js" />
+    <Content Include="Content\themes\MetTheme\dropzone\images\spritemap%402x.png" />
+    <Content Include="Content\themes\MetTheme\dropzone\images\spritemap.png" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\1_b.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\1_s.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\2_b.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\2_s.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\3_b.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\3_s.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\4_b.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\4_s.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\5_b.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\5_s.jpg" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\ajax.txt" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\iframe.html" />
+    <Content Include="Content\themes\MetTheme\fancybox\demo\index.html" />
+    <Content Include="Content\themes\MetTheme\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="Content\themes\MetTheme\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\blank.gif" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Content\themes\MetTheme\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Content\themes\MetTheme\flot\API.txt" />
+    <Content Include="Content\themes\MetTheme\flot\examples\ajax.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\annotating.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\arrow-down.gif" />
+    <Content Include="Content\themes\MetTheme\flot\examples\arrow-left.gif" />
+    <Content Include="Content\themes\MetTheme\flot\examples\arrow-right.gif" />
+    <Content Include="Content\themes\MetTheme\flot\examples\arrow-up.gif" />
+    <Content Include="Content\themes\MetTheme\flot\examples\basic.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\graph-types.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\hs-2004-27-a-large_web.jpg" />
+    <Content Include="Content\themes\MetTheme\flot\examples\image.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\index.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\interacting-axes.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\interacting.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\layout.css" />
+    <Content Include="Content\themes\MetTheme\flot\examples\multiple-axes.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\navigate.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\percentiles.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\pie.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\realtime.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\resize.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\selection.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\setting-options.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\stacking.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\symbols.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\thresholding.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\time.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\tracking.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\turning-series.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\visitors.html" />
+    <Content Include="Content\themes\MetTheme\flot\examples\zooming.html" />
+    <Content Include="Content\themes\MetTheme\flot\excanvas.js" />
+    <Content Include="Content\themes\MetTheme\flot\excanvas.min.js" />
+    <Content Include="Content\themes\MetTheme\flot\FAQ.txt" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.image.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.pie.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.resize.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.selection.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.stack.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\themes\MetTheme\flot\jquery.js" />
+    <Content Include="Content\themes\MetTheme\flot\LICENSE.txt" />
+    <Content Include="Content\themes\MetTheme\flot\NEWS.txt" />
+    <Content Include="Content\themes\MetTheme\flot\PLUGINS.txt" />
+    <Content Include="Content\themes\MetTheme\flot\README.txt" />
+    <Content Include="Content\themes\MetTheme\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\css\font-awesome.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\css\font-awesome.min.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\css\prettify.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\css\site.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\ico\favicon.ico" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\img\contribution-sample.png" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\img\fort_awesome.jpg" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\js\backbone.min.js" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\js\bootstrap-222.min.js" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\js\index\index.js" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\js\prettify.min.js" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\js\underscore.min.js" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\buttons.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\css-tests.css" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\css-tests.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\forms-responsive.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\forms.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\navbar-fixed-top.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\navbar-static-top.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tests\navbar.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\design.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\index.html" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\test.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\changelog.txt" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\agenda-views.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\basic-views.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\cupertino\theme.css" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\default.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\external-dragging.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\gcal.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\json.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\selectable.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\theme.html" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\fullcalendar\gcal.js" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\GPL-LICENSE.txt" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\jquery\jquery-1.8.1.min.js" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\jquery\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\MIT-LICENSE.txt" />
+    <Content Include="Content\themes\MetTheme\glyphicons\css\glyphicons.css" />
+    <Content Include="Content\themes\MetTheme\glyphicons\css\style.css" />
+    <Content Include="Content\themes\MetTheme\glyphicons\images\glyphicons-white.png" />
+    <Content Include="Content\themes\MetTheme\glyphicons\images\glyphicons.png" />
+    <Content Include="Content\themes\MetTheme\glyphicons\index.html" />
+    <Content Include="Content\themes\MetTheme\glyphicons\scripts\modernizr.js" />
+    <Content Include="Content\themes\MetTheme\glyphicons\scripts\modernizr_license.txt" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\css\halflings.css" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\css\style.css" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\images\glyphicons_halflings-white.png" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\images\glyphicons_halflings.png" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\index.html" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\scripts\modernizr.js" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\scripts\modernizr_license.txt" />
+    <Content Include="Content\themes\MetTheme\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\themes\MetTheme\gritter\images\gritter-blue.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images\gritter-brown.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images\gritter-light.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images\gritter-long.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images\gritter-purple.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images\gritter.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\themes\MetTheme\gritter\images_original\gritter-light.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images_original\gritter-long.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images_original\gritter.png" />
+    <Content Include="Content\themes\MetTheme\gritter\images_original\ie-spacer.gif" />
+    <Content Include="Content\themes\MetTheme\gritter\images_original\trees.jpg" />
+    <Content Include="Content\themes\MetTheme\gritter\index.html" />
+    <Content Include="Content\themes\MetTheme\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\themes\MetTheme\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Content\themes\MetTheme\img\arrow-down.png" />
+    <Content Include="Content\themes\MetTheme\img\avatar.png" />
+    <Content Include="Content\themes\MetTheme\img\avatar1.jpg" />
+    <Content Include="Content\themes\MetTheme\img\avatar1_small.jpg" />
+    <Content Include="Content\themes\MetTheme\img\avatar2.jpg" />
+    <Content Include="Content\themes\MetTheme\img\avatar3.jpg" />
+    <Content Include="Content\themes\MetTheme\img\avatar3_small.jpg" />
+    <Content Include="Content\themes\MetTheme\img\dashboard\test.jpg" />
+    <Content Include="Content\themes\MetTheme\img\dashboard\test1.jpg" />
+    <Content Include="Content\themes\MetTheme\img\dashboard\test2.jpg" />
+    <Content Include="Content\themes\MetTheme\img\dashboard\test3.jpg" />
+    <Content Include="Content\themes\MetTheme\img\dashboard\test4.jpg" />
+    <Content Include="Content\themes\MetTheme\img\dashboard\user-feedback.jpg" />
+    <Content Include="Content\themes\MetTheme\img\gallery\image1.jpg" />
+    <Content Include="Content\themes\MetTheme\img\gallery\image2.jpg" />
+    <Content Include="Content\themes\MetTheme\img\gallery\image3.jpg" />
+    <Content Include="Content\themes\MetTheme\img\gallery\image4.jpg" />
+    <Content Include="Content\themes\MetTheme\img\gallery\image5.jpg" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_02.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_03.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_04.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_05.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_06.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_07.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_08.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_09.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_10.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_11.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_12.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_13.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_14.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_15.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_16.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_17.png" />
+    <Content Include="Content\themes\MetTheme\img\gallery\preview_18.png" />
+    <Content Include="Content\themes\MetTheme\img\icon-color-close.png" />
+    <Content Include="Content\themes\MetTheme\img\icon-color.png" />
+    <Content Include="Content\themes\MetTheme\img\icon-img-down.png" />
+    <Content Include="Content\themes\MetTheme\img\icon-img-up.png" />
+    <Content Include="Content\themes\MetTheme\img\invoice\walmart.png" />
+    <Content Include="Content\themes\MetTheme\img\loading.gif" />
+    <Content Include="Content\themes\MetTheme\img\logo-big.png" />
+    <Content Include="Content\themes\MetTheme\img\logo.png" />
+    <Content Include="Content\themes\MetTheme\img\menu-toggler.png" />
+    <Content Include="Content\themes\MetTheme\img\overlay-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\photo1.jpg" />
+    <Content Include="Content\themes\MetTheme\img\photo2.jpg" />
+    <Content Include="Content\themes\MetTheme\img\portlet-collapse-icon-white.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-collapse-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-config-icon-white.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-config-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-expand-icon-white.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-expand-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-reload-icon-white.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-reload-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-remove-icon-white.png" />
+    <Content Include="Content\themes\MetTheme\img\portlet-remove-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\profile\portfolio\logo_azteca.jpg" />
+    <Content Include="Content\themes\MetTheme\img\profile\portfolio\logo_conquer.jpg" />
+    <Content Include="Content\themes\MetTheme\img\profile\portfolio\logo_metronic.jpg" />
+    <Content Include="Content\themes\MetTheme\img\profile\profile-img.jpg" />
+    <Content Include="Content\themes\MetTheme\img\profile\profile-img.png" />
+    <Content Include="Content\themes\MetTheme\img\remove-icon-small.png" />
+    <Content Include="Content\themes\MetTheme\img\search-icon-blue.png" />
+    <Content Include="Content\themes\MetTheme\img\search-icon-brown.png" />
+    <Content Include="Content\themes\MetTheme\img\search-icon-purple.png" />
+    <Content Include="Content\themes\MetTheme\img\search-icon-red.png" />
+    <Content Include="Content\themes\MetTheme\img\search-icon-white.png" />
+    <Content Include="Content\themes\MetTheme\img\search-icon.png" />
+    <Content Include="Content\themes\MetTheme\img\search\img1.jpg" />
+    <Content Include="Content\themes\MetTheme\img\search\img2.jpg" />
+    <Content Include="Content\themes\MetTheme\img\search\img3.jpg" />
+    <Content Include="Content\themes\MetTheme\img\select-caret.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-menu-arrow-green.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-menu-arrow.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-search-close-blue.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-search-close-brown.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-search-close-light.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-search-close-purple.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-search-close.png" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-toggler-blue.jpg" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-toggler-brown.jpg" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-toggler-light.jpg" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-toggler-purple.jpg" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-toggler.jpg" />
+    <Content Include="Content\themes\MetTheme\img\sidebar-toggler.png" />
+    <Content Include="Content\themes\MetTheme\img\syncfusion-icons-white.png" />
+    <Content Include="Content\themes\MetTheme\img\syncfusion-icons.png" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\cors\postmessage.html" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\cors\result.html" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\css\style.css" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\img\loading.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\jquery.fileupload-fp.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\main.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-go\static\favicon.ico" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-go\static\robots.txt" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-python\static\favicon.ico" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-python\static\robots.txt" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\node\server.js" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\test\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\test\test.js" />
+    <Content Include="Content\themes\MetTheme\jquery-knob\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-knob\js\jquery.knob.js" />
+    <Content Include="Content\themes\MetTheme\jquery-nestable\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-nestable\jquery.nestable.css" />
+    <Content Include="Content\themes\MetTheme\jquery-nestable\jquery.nestable.js" />
+    <Content Include="Content\themes\MetTheme\jquery-simpletree\jquery.simpletree.css" />
+    <Content Include="Content\themes\MetTheme\jquery-simpletree\jquery.simpletree.js" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\allow-page-scroll.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\chaining.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\disable-fade-out.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\height-width.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\libs\prettify\prettify.css" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\libs\prettify\prettify.js" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\mouse-wheel.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\multiple-elements.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\programmatic-scrolling.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\rail.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\scrollbar.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\start-position.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\style.css" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\examples\top-bottom-events.html" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\example.html" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\jquery.tagsinput.js" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\test\fake_json_endpoint.html" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\test\fake_plaintext_endpoint.html" />
+    <Content Include="Content\themes\MetTheme\jquery-ui-touch-punch\jquery.ui.touch-punch.js" />
+    <Content Include="Content\themes\MetTheme\jquery-ui-touch-punch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\jquery-ui-1.10.1.custom.css" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-ui\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\changelog.txt" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\ajaxSubmit-intergration-demo.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\captcha.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\images\button.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\style.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\css\chili.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\css\cmxform.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\css\cmxformTemplate.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\css\core.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\css\reset.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\css\screen.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\custom-messages-data-demo.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\custom-methods-demo.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\dynamic-totals.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\errorcontainer-demo.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\file_input.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\images\bg.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\images\checked.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\images\cmxform-divider.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\images\cmxform-fieldset.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\images\loading.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\images\unchecked.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\jquerymobile.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\js\chili-1.7.pack.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\login\images\bg.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\login\images\header1.jpg" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\login\images\page.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\login\images\required_star.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\login\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\login\screen.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\ie6.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\backRequiredGray.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\back_green-fade.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\back_nav_blue.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\blank.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\button-submit.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\favicon.ico" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\help.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\left-nav-callout-long.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\login-sprite.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\logo_marketo.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\sf.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\step1-24.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\step2-24.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\step3-24.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\tab-sprite.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\tab_green.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\time.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\toggle.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\images\warning.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\jquery.maskedinput.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\mktSignup.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\step2.htm" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\stylesheet.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\bg.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\left_white.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\milk.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\milk.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\right_white.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\multipart\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\multipart\js\jquery.maskedinput-1.0.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\multipart\js\ui.accordion.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\multipart\js\ui.core.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\multipart\style.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\radio-checkbox-select-demo.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tabs\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\themerollered.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tinymce\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tinymce\themes\simple\editor_template.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tinymce\themes\simple\langs\en.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\tinymce\tiny_mce.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\grunt.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery-1.6.4.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery-1.7.2.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery-1.8.3.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery-1.9.0.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery.form.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\lib\jquery.mockjax.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_ar.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_bg.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_ca.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_cs.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_da.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_de.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_el.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_es.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_et.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_eu.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_fa.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_fi.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_fr.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_he.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_hr.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_hu.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_it.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_ja.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_ka.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_kk.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_lt.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_lv.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_my.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_nl.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_no.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_pl.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_ro.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_ru.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_si.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_sk.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_sl.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_sr.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_sv.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_th.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_tr.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_uk.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_vi.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_zh.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\methods_de.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\methods_nl.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\localization\methods_pt.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\events.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\errorIcon.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\firebug.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\firebug.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\firebug.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\firebugx.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\infoIcon.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\firebug\warningIcon.png" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\jquery.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\large.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\messages.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\methods.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\qunit\qunit.css" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\qunit\qunit.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\rules.js" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\selects\index.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\tabs.html" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\test\test.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\jquery.vmap.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\jquery.vmap.min.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\jquery.vmap.packed.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\jqvmap.css" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="Content\themes\MetTheme\jqvmap\samples\europe.html" />
+    <Content Include="Content\themes\MetTheme\jqvmap\samples\germany.html" />
+    <Content Include="Content\themes\MetTheme\jqvmap\samples\multi.html" />
+    <Content Include="Content\themes\MetTheme\jqvmap\samples\russia.html" />
+    <Content Include="Content\themes\MetTheme\jqvmap\samples\usa.html" />
+    <Content Include="Content\themes\MetTheme\jqvmap\samples\world.html" />
+    <Content Include="Content\themes\MetTheme\js\app.js" />
+    <Content Include="Content\themes\MetTheme\js\demo.gmaps.js" />
+    <Content Include="Content\themes\MetTheme\js\excanvas.js" />
+    <Content Include="Content\themes\MetTheme\js\gmaps.js" />
+    <Content Include="Content\themes\MetTheme\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\themes\MetTheme\js\jquery.blockui.js" />
+    <Content Include="Content\themes\MetTheme\js\jquery.cookie.js" />
+    <Content Include="Content\themes\MetTheme\js\jquery.pulsate.min.js" />
+    <Content Include="Content\themes\MetTheme\js\respond.js" />
+    <Content Include="Content\themes\MetTheme\uniform\css\uniform.default.css" />
+    <Content Include="Content\themes\MetTheme\uniform\demo\demo.html" />
+    <Content Include="Content\themes\MetTheme\uniform\images\bg-input-focus.png" />
+    <Content Include="Content\themes\MetTheme\uniform\images\bg-input.png" />
+    <Content Include="Content\themes\MetTheme\uniform\images\sprite.png" />
+    <Content Include="Content\themes\MetTheme\uniform\images\sprite_original.png" />
+    <Content Include="Content\themes\MetTheme\uniform\jquery.uniform.js" />
+    <Content Include="Content\themes\MetTheme\uniform\jquery.uniform.min.js" />
+    <Content Include="Content\themes\Theme\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\Theme\css\bootstrap-wysihtml5.css" />
+    <Content Include="Content\themes\Theme\css\bootstrap.min.css" />
+    <Content Include="Content\themes\Theme\css\colorpicker.css" />
+    <Content Include="Content\themes\Theme\css\datepicker.css" />
+    <Content Include="Content\themes\Theme\css\fullcalendar.css" />
+    <Content Include="Content\themes\Theme\css\jquery.gritter.css" />
+    <Content Include="Content\themes\Theme\css\matrix-login.css" />
+    <Content Include="Content\themes\Theme\css\matrix-media.css" />
+    <Content Include="Content\themes\Theme\css\matrix-style.css" />
+    <Content Include="Content\themes\Theme\css\select2.css" />
+    <Content Include="Content\themes\Theme\css\slider\custom.css" />
+    <Content Include="Content\themes\Theme\css\slider\demo.css" />
+    <Content Include="Content\themes\Theme\css\slider\elastislide.css" />
+    <Content Include="Content\themes\Theme\css\uniform.css" />
+    <Content Include="Content\themes\Theme\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\themes\Theme\images\backgrounds\calActiveBg.html" />
+    <Content Include="Content\themes\Theme\images\bg.jpg" />
+    <Content Include="Content\themes\Theme\images\black_denim.png" />
+    <Content Include="Content\themes\Theme\images\gallery\imgbox3.html" />
+    <Content Include="Content\themes\Theme\images\large\1.jpg" />
+    <Content Include="Content\themes\Theme\images\large\10.jpg" />
+    <Content Include="Content\themes\Theme\images\large\11.jpg" />
+    <Content Include="Content\themes\Theme\images\large\12.jpg" />
+    <Content Include="Content\themes\Theme\images\large\13.jpg" />
+    <Content Include="Content\themes\Theme\images\large\14.jpg" />
+    <Content Include="Content\themes\Theme\images\large\15.jpg" />
+    <Content Include="Content\themes\Theme\images\large\16.jpg" />
+    <Content Include="Content\themes\Theme\images\large\17.jpg" />
+    <Content Include="Content\themes\Theme\images\large\18.jpg" />
+    <Content Include="Content\themes\Theme\images\large\19.jpg" />
+    <Content Include="Content\themes\Theme\images\large\2.jpg" />
+    <Content Include="Content\themes\Theme\images\large\20.jpg" />
+    <Content Include="Content\themes\Theme\images\large\3.jpg" />
+    <Content Include="Content\themes\Theme\images\large\4.jpg" />
+    <Content Include="Content\themes\Theme\images\large\5.jpg" />
+    <Content Include="Content\themes\Theme\images\large\6.jpg" />
+    <Content Include="Content\themes\Theme\images\large\7.jpg" />
+    <Content Include="Content\themes\Theme\images\large\8.jpg" />
+    <Content Include="Content\themes\Theme\images\large\9.jpg" />
+    <Content Include="Content\themes\Theme\images\loading.gif" />
+    <Content Include="Content\themes\Theme\images\loading_dark.gif" />
+    <Content Include="Content\themes\Theme\images\nav.png" />
+    <Content Include="Content\themes\Theme\images\small\1.jpg" />
+    <Content Include="Content\themes\Theme\images\small\10.jpg" />
+    <Content Include="Content\themes\Theme\images\small\11.jpg" />
+    <Content Include="Content\themes\Theme\images\small\12.jpg" />
+    <Content Include="Content\themes\Theme\images\small\13.jpg" />
+    <Content Include="Content\themes\Theme\images\small\14.jpg" />
+    <Content Include="Content\themes\Theme\images\small\15.jpg" />
+    <Content Include="Content\themes\Theme\images\small\16.jpg" />
+    <Content Include="Content\themes\Theme\images\small\17.jpg" />
+    <Content Include="Content\themes\Theme\images\small\18.jpg" />
+    <Content Include="Content\themes\Theme\images\small\19.jpg" />
+    <Content Include="Content\themes\Theme\images\small\2.jpg" />
+    <Content Include="Content\themes\Theme\images\small\20.jpg" />
+    <Content Include="Content\themes\Theme\images\small\3.jpg" />
+    <Content Include="Content\themes\Theme\images\small\4.jpg" />
+    <Content Include="Content\themes\Theme\images\small\5.jpg" />
+    <Content Include="Content\themes\Theme\images\small\6.jpg" />
+    <Content Include="Content\themes\Theme\images\small\7.jpg" />
+    <Content Include="Content\themes\Theme\images\small\8.jpg" />
+    <Content Include="Content\themes\Theme\images\small\9.jpg" />
+    <Content Include="Content\themes\Theme\img\alpha.html" />
+    <Content Include="Content\themes\Theme\img\breadcrumb.png" />
+    <Content Include="Content\themes\Theme\img\demo\av1.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\av2.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\av3.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\av4.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\av5.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\demo-image1.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\demo-image2.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\demo-image3.jpg" />
+    <Content Include="Content\themes\Theme\img\demo\envelope.png" />
+    <Content Include="Content\themes\Theme\img\gallery\imgbox1.jpg" />
+    <Content Include="Content\themes\Theme\img\gallery\imgbox2.jpg" />
+    <Content Include="Content\themes\Theme\img\gallery\imgbox3.jpg" />
+    <Content Include="Content\themes\Theme\img\gallery\imgbox4.jpg" />
+    <Content Include="Content\themes\Theme\img\gallery\imgbox5.jpg" />
+    <Content Include="Content\themes\Theme\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\Theme\img\glyphicons-halflings.html" />
+    <Content Include="Content\themes\Theme\img\gritter.png" />
+    <Content Include="Content\themes\Theme\img\hue.png" />
+    <Content Include="Content\themes\Theme\img\larrow.png" />
+    <Content Include="Content\themes\Theme\img\line.png" />
+    <Content Include="Content\themes\Theme\img\logo.jpg" />
+    <Content Include="Content\themes\Theme\img\menu-active.png" />
+    <Content Include="Content\themes\Theme\img\rarrow.png" />
+    <Content Include="Content\themes\Theme\img\saturation.png" />
+    <Content Include="Content\themes\Theme\img\select2.png" />
+    <Content Include="Content\themes\Theme\img\spinner.gif" />
+    <Content Include="Content\themes\Theme\img\sprite.png" />
+    <Content Include="Content\themes\Theme\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\themes\Theme\js\bootstrap-datepicker.js" />
+    <Content Include="Content\themes\Theme\js\bootstrap-wysihtml5.js" />
+    <Content Include="Content\themes\Theme\js\bootstrap.min.js" />
+    <Content Include="Content\themes\Theme\js\chainedselects.js" />
+    <Content Include="Content\themes\Theme\js\excanvas.min.js" />
+    <Content Include="Content\themes\Theme\js\fullcalendar.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.dataTables.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.elastislide.js" />
+    <Content Include="Content\themes\Theme\js\jquery.flot.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.flot.pie.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.flot.resize.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.gritter.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.peity.min.js" />
+    <Content Include="Content\themes\Theme\js\jquery.toggle.buttons.html" />
+    <Content Include="Content\themes\Theme\js\jquery.ui.custom.js" />
+    <Content Include="Content\themes\Theme\js\jquery.uniform.js" />
+    <Content Include="Content\themes\Theme\js\jquery.validate.js" />
+    <Content Include="Content\themes\Theme\js\jquery.wizard.js" />
+    <Content Include="Content\themes\Theme\js\jquerypp.custom.js" />
+    <Content Include="Content\themes\Theme\js\maruti.html" />
+    <Content Include="Content\themes\Theme\js\masked.js" />
+    <Content Include="Content\themes\Theme\js\matrix.calendar.js" />
+    <Content Include="Content\themes\Theme\js\matrix.charts.js" />
+    <Content Include="Content\themes\Theme\js\matrix.chat.js" />
+    <Content Include="Content\themes\Theme\js\matrix.dashboard.js" />
+    <Content Include="Content\themes\Theme\js\matrix.form_common.js" />
+    <Content Include="Content\themes\Theme\js\matrix.form_validation.js" />
+    <Content Include="Content\themes\Theme\js\matrix.interface.js" />
+    <Content Include="Content\themes\Theme\js\matrix.js" />
+    <Content Include="Content\themes\Theme\js\matrix.login.js" />
+    <Content Include="Content\themes\Theme\js\matrix.popover.js" />
+    <Content Include="Content\themes\Theme\js\matrix.tables.js" />
+    <Content Include="Content\themes\Theme\js\matrix.wizard.js" />
+    <Content Include="Content\themes\Theme\js\modernizr.custom.17475.js" />
+    <Content Include="Content\themes\Theme\js\select2.min.js" />
+    <Content Include="Content\themes\Theme\js\selectconfig.js" />
+    <Content Include="Content\themes\Theme\js\wysihtml5-0.3.0.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Report\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Designation\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Designation\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Designation\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Designation\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Designation\Delete.cshtml" />
+    <Content Include="Content\themes\Theme\font-awesome\css\Descr.WD3" />
+    <Content Include="Content\themes\Theme\font-awesome\font\Descr.WD3" />
+    <Content Include="Content\themes\Theme\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\themes\Theme\font-awesome\font\fontawesome-webfont.eot%40" />
+    <Content Include="Content\themes\Theme\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\themes\Theme\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\themes\Theme\images\.DS_Store" />
+    <Content Include="Content\themes\Theme\images\backgrounds\blank2" />
+    <Content Include="Content\themes\Theme\images\backgrounds\Descr.WD3" />
+    <Content Include="Content\themes\Theme\images\backgrounds\skype_3Asuniljoshi19%40call" />
+    <Content Include="Content\themes\Theme\img\demo\Descr.WD3" />
+    <Content Include="Content\themes\Theme\img\Descr.WD3" />
+    <Content Include="Content\themes\Theme\img\gallery\Descr.WD3" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_footer.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_header.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_left.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLogin\Index.cshtml" />
+    <EntityDeploy Include="Models\Time.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Time.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Time.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Time.edmx</DependentUpon>
+      <LastGenOutput>Time.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Time.edmx.diagram">
+      <DependentUpon>Time.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Time.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Time.edmx</DependentUpon>
+      <LastGenOutput>Time.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Admin\Views\AdminLogin\Register.cshtml" />
+    <Content Include="Content\themes\MetTheme\bootstrap-colorpicker\less\colorpicker.less" />
+    <Content Include="Content\themes\MetTheme\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Content\themes\MetTheme\bootstrap-daterangepicker\README.md" />
+    <Content Include="Content\themes\MetTheme\bootstrap-timepicker\.gitignore" />
+    <Content Include="Content\themes\MetTheme\bootstrap-timepicker\less\timepicker.less" />
+    <Content Include="Content\themes\MetTheme\bootstrap-timepicker\README.md" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\.gitignore" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\LICENSE" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\README.md" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\static\config.rb" />
+    <Content Include="Content\themes\MetTheme\bootstrap-toggle-buttons\static\sass\bootstrap-toggle-buttons.scss" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\.gitignore" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\jsonexample.json" />
+    <Content Include="Content\themes\MetTheme\bootstrap-tree\README.md" />
+    <Content Include="Content\themes\MetTheme\bootstrap-wizard\README.md" />
+    <Content Include="Content\themes\MetTheme\breakpoints\README.md" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\.gitignore" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\Cakefile" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\chosen\lib\chosen.less" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\coffee\chosen.jquery.coffee" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\coffee\chosen.proto.coffee" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\coffee\lib\abstract-chosen.coffee" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\coffee\lib\select-parser.coffee" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\LICENSE.md" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\package.json" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\README.md" />
+    <Content Include="Content\themes\MetTheme\chosen-bootstrap\VERSION" />
+    <Content Include="Content\themes\MetTheme\ckeditor\CHANGES.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\LICENSE.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\README.md" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Content\themes\MetTheme\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Content\themes\MetTheme\ckeditor\skins\moono\readme.md" />
+    <Content Include="Content\themes\MetTheme\clockface\LICENSE-MIT" />
+    <Content Include="Content\themes\MetTheme\clockface\README.md" />
+    <Content Include="Content\themes\MetTheme\dropzone\css\stylus\basic.styl" />
+    <Content Include="Content\themes\MetTheme\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Content\themes\MetTheme\dropzone\upload.php" />
+    <Content Include="Content\themes\MetTheme\fancybox\.gitattributes" />
+    <Content Include="Content\themes\MetTheme\fancybox\CHANGELOG.md" />
+    <Content Include="Content\themes\MetTheme\fancybox\README.md" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-eu-gdp-growth-1.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-eu-gdp-growth-2.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-eu-gdp-growth-3.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-eu-gdp-growth-4.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-eu-gdp-growth-5.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-eu-gdp-growth.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-japan-gdp-growth.json" />
+    <Content Include="Content\themes\MetTheme\flot\examples\data-usa-gdp-growth.json" />
+    <Content Include="Content\themes\MetTheme\flot\Makefile" />
+    <Content Include="Content\themes\MetTheme\font-awesome\.gitignore" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\fontawesome-webfont.eot" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\fontawesome-webfont.woff" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\FontAwesome.otf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\museo_slab_300-webfont.eot" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\museo_slab_300-webfont.ttf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\museo_slab_500-webfont.eot" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\museo_slab_500-webfont.ttf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\proximanova-sbold-webfont.eot" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\proximanova-sbold-webfont.ttf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\proximanova-webfont.eot" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\font\proximanova-webfont.ttf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\img\icon-flag.pdf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\font-awesome-ie7.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\font-awesome.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\font-site.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\mixins.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\site.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\accordion.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\alerts.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\bootstrap.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\breadcrumbs.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\button-groups.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\buttons.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\carousel.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\close.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\code.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\component-animations.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\dropdowns.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\forms.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\grid.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\hero-unit.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\labels-badges.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\layouts.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\media.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\mixins.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\modals.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\navbar.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\navs.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\pager.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\pagination.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\popovers.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\progress-bars.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\reset.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\responsive-1200px-min.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\responsive-767px-max.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\responsive-768px-979px.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\responsive-navbar.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\responsive-utilities.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\responsive.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\scaffolding.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\sprites.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tables.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\thumbnails.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\tooltip.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\type.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\utilities.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\variables.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\twbs-222\wells.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\docs\assets\less\variables.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\themes\MetTheme\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\themes\MetTheme\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Content\themes\MetTheme\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\themes\MetTheme\font-awesome\README.md" />
+    <Content Include="Content\themes\MetTheme\font-awesome\sass\font-awesome.sass" />
+    <Content Include="Content\themes\MetTheme\font-awesome\sass\font-awesome.scss" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\.DS_Store" />
+    <Content Include="Content\themes\MetTheme\fullcalendar\demos\json-events.php" />
+    <Content Include="Content\themes\MetTheme\glyphicons\fonts\glyphicons-regular.eot" />
+    <Content Include="Content\themes\MetTheme\glyphicons\fonts\glyphicons-regular.otf" />
+    <Content Include="Content\themes\MetTheme\glyphicons\fonts\glyphicons-regular.svg" />
+    <Content Include="Content\themes\MetTheme\glyphicons\fonts\glyphicons-regular.ttf" />
+    <Content Include="Content\themes\MetTheme\glyphicons\fonts\glyphicons-regular.woff" />
+    <Content Include="Content\themes\MetTheme\glyphicons\images\glyphicons-white.svg" />
+    <Content Include="Content\themes\MetTheme\glyphicons\images\glyphicons.svg" />
+    <Content Include="Content\themes\MetTheme\glyphicons\less\glyphicons.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons\less\reset.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons\less\site.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons\less\style.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\fonts\glyphiconshalflings-regular.eot" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\fonts\glyphiconshalflings-regular.otf" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\fonts\glyphiconshalflings-regular.ttf" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\fonts\glyphiconshalflings-regular.woff" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\images\glyphicons_halflings-white.svg" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\images\glyphicons_halflings.svg" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\less\halflings.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\less\reset.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\less\site.less" />
+    <Content Include="Content\themes\MetTheme\glyphicons_halflings\less\style.less" />
+    <Content Include="Content\themes\MetTheme\gritter\README.markdown" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\.gitignore" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\blueimp-file-upload.jquery.json" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\CONTRIBUTING.md" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\package.json" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\README.md" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-go\app.yaml" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-go\app\main.go" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-python\app.yaml" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\gae-python\main.py" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\node\.gitignore" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\node\package.json" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\node\public\files\thumbnail\.gitignore" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\node\tmp\.gitignore" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\php\files\.htaccess" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\php\index.php" />
+    <Content Include="Content\themes\MetTheme\jquery-file-upload\server\php\UploadHandler.php" />
+    <Content Include="Content\themes\MetTheme\jquery-knob\README.md" />
+    <Content Include="Content\themes\MetTheme\jquery-nestable\README.md" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\README.md" />
+    <Content Include="Content\themes\MetTheme\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="Content\themes\MetTheme\jquery-tags-input\README.md" />
+    <Content Include="Content\themes\MetTheme\jquery-ui-touch-punch\README.md" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\fonts\Anorexia.ttf" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\images\image.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\image_req.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\index.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\newsession.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\process.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\captcha\rand.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\form.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\form.phps" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\emails.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\marketo\emails.phps" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\emails.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\emails.phps" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\users.php" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\demo\milk\users.phps" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\package.json" />
+    <Content Include="Content\themes\MetTheme\jquery-validation\README.md" />
+    <Content Include="Content\themes\MetTheme\jqvmap\.gitignore" />
+    <Content Include="Content\themes\MetTheme\jqvmap\README.md" />
+    <Content Include="Content\themes\MetTheme\uniform\README.textile" />
+    <Content Include="Areas\Admin\Views\AdminLogin\Copy of Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLogin\delte.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_breadcrumb.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\IndexGroup.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\GroupEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\GroupDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\GroupDelete.cshtml" />
+    <Content Include="Areas\Admin\Views\OwnerCreate\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OwnerCreate\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\OwnerCreate\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\OwnerCreate\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\OwnerCreate\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\EmployeeTable\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\EmployeeTable\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\EmployeeTable\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\EmployeeTable\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\EmployeeTable\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Audit\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Audit\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Religion\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Religion\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Religion\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Religion\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Religion\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupApplication\GroupCreate.cshtml" />
+    <Content Include="Areas\Admin\Views\OnlinePeople\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OnlinePeople\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\OnlinePeople\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\OnlinePeople\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\OnlinePeople\Delete.cshtml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Account\RoleManage.cshtml" />
+    <Content Include="Views\Account\_AddRole.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\themes\MetTheme\jquery-file-upload\server\php\files\thumbnail\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44212/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

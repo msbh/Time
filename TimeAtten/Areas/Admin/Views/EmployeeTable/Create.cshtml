@@ -1,0 +1,362 @@
+﻿@model TimeAtten.Framework.Admin.OwnerCreation
+@{
+    ViewBag.Title = "Employee Entry";
+    TimeAtten.Services.Utilities.BreadCrumbList breadcrumbs = ViewBag.BreadCrums;
+    string err = "";
+    try
+    {
+        err = "Caution ! " + TempData["ErrorMessage"].ToString();
+    }
+    catch (Exception ert) { }
+}
+@Html.Partial("_header")
+<!--close-Header-part-->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+    @Html.Partial("_left", "EmployeeEntry")
+    <!-- BEGIN PAGE -->
+    <div class="page-content">
+
+        <!-- BEGIN PAGE CONTAINER-->
+        <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->
+            @{Html.RenderPartial("_breadcrumb", breadcrumbs);}
+            <!-- END PAGE HEADER-->
+            <!-- Form -->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <h4><i class="icon-reorder"></i>Employee Entry</h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+                <div id="err" style="color:#F80606;">
+                    @err
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm(new { @class = "form-horizontal" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        @*<form action="#" class="form-horizontal">*@
+                        <h3 class="form-section">Employee Personal Info</h3>
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">User Name</label>
+                                    <div class="controls">
+                                        @Html.TextBoxFor(model => model.User.UserName, new { @class = "m-wrap span12" })
+                                        @*<input type="text" class="m-wrap span12" placeholder="Chee Kin">*@
+                                        <span class="help-block">@Html.ValidationMessageFor(model => model.User.UserName)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Email</label>
+                                    <div class="controls">
+                                        <div class="input-icon left">
+                                            <i class="icon-envelope"></i>
+                                            @Html.TextBoxFor(model => model.User.email, new { @class = "m-wrap span12" })
+                                        </div>
+                                        <span class="help-block">
+                                            @Html.ValidationMessageFor(model => model.User.email)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">First Name</label>
+                                    <div class="controls">
+                                        @Html.TextBoxFor(model => model.UserProfile.First_Name, new { @class = "m-wrap span12" })
+                                        <span class="help-block">
+                                            @Html.ValidationMessageFor(model => model.UserProfile.First_Name)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group ">
+                                    <label class="control-label">Last Name</label>
+                                    <div class="controls">
+                                        @Html.TextBoxFor(model => model.UserProfile.Last_Name, new { @class = "m-wrap span12" })
+                                        <span class="help-block">@Html.ValidationMessageFor(model => model.UserProfile.Last_Name)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->                                    
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">New Password</label>
+                                    <div class="controls">
+                                        @Html.PasswordFor(model => model.OwnerModal.Password, new { @class = "m-wrap span12" })
+                                        <span class="help-block">@Html.ValidationMessageFor(model => model.OwnerModal.Password)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Confirm Password</label>
+                                    <div class="controls">
+                                        @Html.PasswordFor(model => model.OwnerModal.ConfirmPassword, new { @class = "m-wrap span12" })
+                                        <span class="help-block">@Html.ValidationMessageFor(model => model.OwnerModal.ConfirmPassword)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        
+                        <!--/row-->
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Gender</label>
+                                    <div class="controls">
+
+                                        <select class="m-wrap span12" id="UserProfile_Gender" name="UserProfile.Gender">
+                                            @{ try
+                                               { <option 
+                                                @if (Model.UserProfile.Gender == "male")
+                                                {
+                                                    string temp = "selected";@temp } value="Male">Male</option>
+                                                <option @if (Model.UserProfile.Gender == "female")
+                                                        {
+                                                            string temp = "selected";@temp } value="female">Female</option>
+                                               }
+                                               catch (Exception ee)
+                                               { 
+                                                  
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                               }
+                                            }
+                                        </select>
+                                        <span class="help-block">@Html.ValidationMessageFor(model => model.UserProfile.Gender)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Birthday Date</label>
+                                    <div class="controls">
+                                        <div class="input-append date date-picker" data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="12-02-2012">
+                                            @Html.TextBoxFor(model => model.UserProfile.B_Date, new { @class = "m-wrap span12 m-ctrl-medium date-picker" })
+                                            @* <input class="m-wrap m-ctrl-medium date-picker" type="text" value="12-02-2012" size="16">*@
+                                            <span class="add-on">
+                                                <i class="icon-calendar"></i>
+                                            </span>
+                                            <span class="help-block">
+                                                @Html.ValidationMessageFor(model => model.UserProfile.B_Date)
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->        
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Country</label>
+                                    <div class="controls">
+                                        @{
+                                               TimeAtten.Framework.Admin.CountriesModel Countries = ViewBag.countries;
+                                        }
+                                        @Html.DropDownListFor(model => model.UserProfile.Nation_Code, Countries.CountrySelectList, "Select Countries", new { @class = "span12 chosen_category" })
+                                        @*<select class="span12 chosen_category" data-placeholder="Choose a Category" tabindex="1">
+                                            <option value=""></option>
+                                            <option value="Category 1">Category 1</option>
+                                            <option value="Category 2">Category 2</option>
+                                            <option value="Category 3">Category 5</option>
+                                            <option value="Category 4">Category 4</option>
+                                        </select>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">City</label>
+                                    <div class="controls">
+                                        @Html.TextBoxFor(model => model.UserProfile.City, new { @class = "m-wrap span12" })
+                                    </div>
+                                    <span class="help-block">
+                                        @Html.ValidationMessageFor(model => model.UserProfile.City)</span>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->   
+                        <!--/row-->        
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Religion</label>
+                                    <div class="controls">
+                                        @{
+                                               TimeAtten.Framework.Admin.ReligionModel Religion = ViewBag.Religion;
+                                        }
+                                        @Html.DropDownListFor(model => model.UserProfile.Relig_Code, Religion.ReligionSelectList, "Select Religion", new { @class = "span12 chosen_category" })
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Zipcode</label>
+                                    <div class="controls">
+                                        @Html.TextBoxFor(model => model.UserProfile.Zipcode, new { @class = "m-wrap span12" })
+                                    </div>
+                                    <span class="help-block">
+                                        @Html.ValidationMessageFor(model => model.UserProfile.Zipcode)</span>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->                             
+                        <h3 class="form-section">Company Information</h3>
+                        <div class="row-fluid">
+                            <div class="span12 ">
+                                <div class="control-group">
+                                    <label class="control-label">Comapny Name</label>
+                                    <div class="controls">
+                                        @{
+                                         TimeAtten.Framework.Admin.CompaniesSelect CompaniesS = ViewBag.Companies;
+                                        }
+                                        @Html.DropDownListFor(model => model.Company.CompanyId, CompaniesS.ComapnySelectList, "Select Company", new { @class = "span12 chosen_category" })
+                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        
+                        
+                        <!--/row-->@*           
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Post Code</label>
+                                    <div class="controls">
+                                        <input type="text" class="m-wrap span12">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Country</label>
+                                    <div class="controls">
+                                        <select class="m-wrap span12"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>*@
+                        <!--/row-->
+                        <div class="form-actions">
+                            <button type="submit" value="Create" class="btn blue"><i class="icon-ok"></i>Save</button>
+
+
+                            @Html.ActionLink("Cancel", "Index", "OwnerCreate", new { @class = "btn" })
+                            @Html.HiddenFor(model => model.Company.CompanyId)
+                            @Html.HiddenFor(model => model.Company.IsActive)
+                            @Html.HiddenFor(model => model.Company.ParentId)
+                            @Html.HiddenFor(model => model.Company.userId)
+
+                            @Html.HiddenFor(model => model.User.CreatedBy)
+                            @Html.HiddenFor(model => model.User.CreatedDate)
+                            @Html.HiddenFor(model => model.User.ID)
+                            @Html.HiddenFor(model => model.User.IsActive)
+                            @Html.HiddenFor(model => model.User.IsAdmin)
+                            @Html.HiddenFor(model => model.User.Password)
+                            @Html.HiddenFor(model => model.User.IsSuperAdmin)
+                            @Html.HiddenFor(model => model.User.PinCode)
+
+                            @Html.HiddenFor(model => model.UserProfile.CardID)
+                            @Html.HiddenFor(model => model.UserProfile.Pin_Code)
+                            @Html.HiddenFor(model => model.UserProfile.Authority)
+                            @Html.HiddenFor(model => model.UserProfile.AutoFill)
+                            @Html.HiddenFor(model => model.UserProfile.FlexTime)
+                            @Html.HiddenFor(model => model.UserProfile.GraceMins)
+                            @Html.HiddenFor(model => model.UserProfile.HierCode)
+                            @Html.HiddenFor(model => model.UserProfile.J_Date)
+                            @Html.HiddenFor(model => model.UserProfile.Desigs_Code)
+                            @Html.HiddenFor(model => model.UserProfile.PlanCode)
+                            @Html.HiddenFor(model => model.UserProfile.PunchOnce)
+                            @Html.HiddenFor(model => model.UserProfile.R_Date)
+                            @Html.HiddenFor(model => model.UserProfile.Reject)
+                            @Html.HiddenFor(model => model.UserProfile.Timezone_Code)
+                            @Html.HiddenFor(model => model.UserProfile.UserId)
+                            @Html.HiddenFor(model => model.UserProfile.Mer_Stat)
+                            @Html.HiddenFor(model => model.UserProfile.PlanCode)
+                            @Html.HiddenFor(model => model.UserProfile.QualCode)
+                            @Html.HiddenFor(model => model.UserProfile.Service_Stat)
+                            @Html.HiddenFor(model => model.UserProfile.TZone_Status)
+                            @Html.HiddenFor(model => model.UserProfile.UsrTemplate)
+                            @Html.HiddenFor(model => model.UserProfile.IsActive)
+                        </div>@*
+                                 </form>*@
+                    }
+                    <!-- END FORM-->
+
+                </div>
+
+
+
+                <!-- end form -->
+
+            </div>
+        </div>
+        <!-- END PAGE -->
+    </div>
+    <!-- END CONTAINER -->
+</div>
+    @Html.Partial("_footer")
+    <script>
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            App.init();
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            App.setPage("table_editable");
+            App.init();
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+
+            // to fix chosen dropdown width in inactive hidden tab content
+            $('.advance_form_with_chosen_element').on('shown', function (e) {
+                App.initChosenSelect('.chosen_category:visible');
+            });
+
+            // initiate layout and plugins
+            App.init();
+        });
+    </script>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
+

@@ -1,0 +1,36 @@
+﻿@model TimeAtten.Models.NATION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NATION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nation_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nation_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CallCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CallCode)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

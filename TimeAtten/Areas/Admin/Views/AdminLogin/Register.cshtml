@@ -1,0 +1,493 @@
+﻿@model TimeAtten.Framework.Admin.BothLoginHeader
+
+@{
+    ViewBag.Title = "Register";
+    string Message = "";
+    string ReturnUrl ="";
+    try
+    {
+        Message = TempData["ErrorMessage"].ToString();
+         ReturnUrl = TempData["ReturnUrl"].ToString();
+        TempData["ReturnUrl"] = ReturnUrl;
+    }
+    catch (Exception ee)
+    {
+        try
+        {
+            Message = TempData["ErrorMessage"].ToString();
+        }
+        catch (Exception eeu)
+        {
+        }
+    }
+}
+@{
+        // Layout = "~/~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Login  Zultime</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="Msbh" />
+    <link href="~/Content/themes/MetTheme/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/themes/MetTheme/", "~/Content/themes/MetTheme/")
+    <link href="~/Content/themes/MetTheme/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="login">
+    <!-- BEGIN LOGO -->
+    <div class="logo">
+        <img src="~/Content/themes/Theme/img/logo.png" style="margin-top: -68px; width: 160px;" alt="Logo" />
+        @*  <img src="assets/img/logo-big.png" alt="" /> *@
+    </div>
+    <!-- END LOGO -->
+    <!-- BEGIN LOGIN -->
+    <div class="content">
+        <div>
+            @Message
+        </div>
+        <!-- BEGIN LOGIN FORM -->
+        @using (Html.BeginForm("Login", "AdminLogin", FormMethod.Post, new { id = "ULoginForm", @class = "form-vertical login-form" }))
+        {
+          
+            <h3 class="form-title">Login to your account</h3>
+            <div class="alert alert-error hide">
+                <button class="close" data-dismiss="alert"></button>
+                <span>Enter any username and passowrd.</span>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Username</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-user"></i>
+                        @Html.TextBoxFor(model => model.LoginViewModel.Username, new { @class = "m-wrap placeholder-no-fix", @minlength = 4, @maxlength = 20, @placeholder = "Username" })
+                        @*<input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">Password</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-lock"></i>
+                        @Html.PasswordFor(model => model.LoginViewModel.Password, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", @placeholder = "Password" })
+                        @*<input class="m-wrap placeholder-no-fix" type="password" placeholder="Password" name="password"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <label class="checkbox">
+                    @Html.CheckBoxFor(model => model.LoginViewModel.RememberMe)
+                    @*<input type="checkbox" name="remember" value="1"/> *@Remember me
+                </label>
+                <button type="submit" class="btn green pull-right" id="login">
+                    Login <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+            <div class="forget-password">
+                <h4>Forgot your password ?</h4>
+                <p>
+                    no worries, click <a href="javascript:;" class="" id="forget-password">here</a>
+                    to reset your password.
+                </p>
+            </div>
+            <div class="create-account">
+                <p>
+                    Don't have an account yet ?&nbsp; 
+          <a href="javascript:;" id="register-btn" class="">Create an account</a>
+                </p>
+            </div>
+        }
+        <!-- END LOGIN FORM -->
+        <!-- BEGIN FORGOT PASSWORD FORM -->
+        @using (Html.BeginForm("Register", "AdminLogin", FormMethod.Post, new { id = "ForgotForm", @class = "form-vertical forget-form" }))
+        {    
+            <h3 class="">Forget Password ?</h3>
+            <p>Enter your e-mail address below to reset your password.</p>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @*<input class="m-wrap placeholder-no-fix" type="text" placeholder="Email" name="email" />*@
+                        @Html.TextBoxFor(model => model.ForgotPasswordViewModel.UsernameOrEmail, new { @class = "m-wrap placeholder-no-fix", @minlength = 4, @maxlength = 20, @placeholder = "Email" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="back-btn" class="btn">
+                    <i class="m-icon-swapleft"></i>Back
+                </button>
+                <button type="submit" class="btn green pull-right">
+                    Submit <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        }
+
+        <!-- END FORGOT PASSWORD FORM -->
+        <!-- BEGIN REGISTRATION FORM -->
+        @using (Html.BeginForm("Register", "AdminLogin", FormMethod.Post, new { id = "RegisterForm", @class = "form-vertical register-form" }))
+        {          
+            <h3 class="">Sign Up</h3>
+            <p>Enter your account details below:</p>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">@Html.LabelFor(model => model.RegisterViewModel.Username)</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-user"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Username, new { @class = "m-wrap placeholder-no-fix", @minlength = 4, @maxlength = 20, @placeholder = "Username" })
+                        @*<input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">@Html.LabelFor(model => model.RegisterViewModel.Password)</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-lock"></i>
+                        @Html.PasswordFor(model => model.RegisterViewModel.Password, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", @placeholder = "Password" })
+                        @* <input class="m-wrap placeholder-no-fix" type="password" id="register_password" placeholder="Password" name="password"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-ok"></i>
+                        @Html.PasswordFor(model => model.RegisterViewModel.ConfirmPassword, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Re-type Your Password" })
+                        @*<input class="m-wrap placeholder-no-fix" type="password" placeholder="Re-type Your Password" name="rpassword"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Email</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Email, new { @class = "m-wrap placeholder-no-fix", placeholder = "Email" })
+                        @*<input class="m-wrap placeholder-no-fix" type="text" placeholder="Email" name="email"/>*@
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">First Name</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.FirstName, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "First Name" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Last Name</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.LastName, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Last Name" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Gender</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Sex, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Gender" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Address</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextAreaFor(model => model.RegisterViewModel.Address, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Address" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Birthday</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.BirthdayDate, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Birthdate" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">City</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.City, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "City" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">State</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.State, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "State" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Country</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Country, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Country" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Zipcode</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.ZipCode, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Zipcode" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Religion</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="icon-envelope"></i>
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Religion, new { @class = "m-wrap placeholder-no-fix", maxlength = "20", placeholder = "Religion" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        @Html.CheckBoxFor(model => model.RegisterViewModel.Terms)
+                        @*<input type="checkbox" name="tnc"/>*@
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                    <div id="register_tnc_error"></div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button id="register-back-btn" type="button" class="btn">
+                    <i class="m-icon-swapleft"></i>Back
+                </button>
+                <button type="submit" id="register-submit-btn" class="btn green pull-right">
+                    Sign Up <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        }
+
+        <!-- END REGISTRATION FORM -->
+    </div>
+    <!-- END LOGIN -->
+    <!-- BEGIN COPYRIGHT -->
+    <div class="copyright">
+        2013 &copy; zultime.
+    </div>
+    <!-- END COPYRIGHT -->
+    <!-- BEGIN JAVASCRIPTS -->
+    <script src="~/Content/themes/MetTheme/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Content/themes/MetTheme/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/themes/MetTheme/uniform/jquery.uniform.min.js"></script>
+    <script src="~/Content/themes/MetTheme/js/jquery.blockui.js"></script>
+    <script type="text/javascript" src="~/Content/themes/MetTheme/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Content/themes/MetTheme/js/app.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.initLogin();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
+
+
+
+
+<script type="text/javascript">
+
+    //    $("#RegisterViewModel_Phone").mask("(999) 999-9999");
+    //    $("#RegisterViewModel_ZipCode").mask("99999");
+    $('#State').removeClass('search-field2').addClass('register');
+
+    //    $('#Captcha').addclass('register');
+
+    var ddlState = $("#State");
+
+
+    $(function () {
+
+        if (document.getElementById('LoginViewModel_Username').value == "")
+        { document.getElementById('LoginErrorMessage').innerHTML = '' }
+        else {
+            document.getElementById('LoginErrorMessage').innerHTML = document.getElementById('GlobalMessageId').innerHTML;
+            document.getElementById('LoginErrorMessage').style.color = "red";
+        }
+
+        //        document.getElementById('GlobalMessageId').style.display = "none";
+
+        changeState();
+        ddlState.change(changeState);
+    });
+
+
+
+
+    var ddlUserEmail = $("#RegisterViewModel_Email");
+    var ddlUserName = $("#RegisterViewModel_Username");
+    var ddlcity = $("#RegisterViewModel_City");
+    $(function () {
+        ddlUserEmail.change(changeEmail);
+        ddlUserName.change(changeUser);
+        ddlcity.focusout(changeCity);
+        ddlcity.change(changeCity);
+
+    });
+
+
+
+    function changeUser() {
+        $('#usernameLoading').show();
+
+        var ddl23 = $.trim($("#RegisterViewModel_Username").val());
+        var status = $("#divStatus");
+        var GetUservalid = '@Url.Action("CheckName", "Auth", new { area = "" })';
+        status.html('');
+        $.post(GetUservalid, { username: ddl23 }, function (data) {
+            var temp = "";
+            temp = data.toString();
+            if (temp == 'true' && ddl23.length > 3) {
+                status.html(ddl23 + " is available!");
+                document.getElementById('ValidateHideImage').style.display = 'none';
+                document.getElementById('ValidateHideButton').style.display = '';
+            } else {
+                document.getElementById('ValidateHideImage').style.display = '';
+                document.getElementById('ValidateHideButton').style.display = 'none';
+                status.html(ddl23 + " is already taken!");
+            }
+        });
+        $('#usernameLoading').hide();
+
+    }
+
+
+
+    function changeEmail() {
+
+        var emailVali = $.trim($("#RegisterViewModel_Email").val());
+        var statusEmail = $("#divEmail");
+        var GetUservalid = '@Url.Action("CheckEmail", "Auth", new { area = "" })';
+        // statusEmail.html('');
+        $.post(GetUservalid, { email: emailVali }, function (data) {
+            var temp2 = "";
+            temp2 = data.toString();
+            if (temp2 == 'true') {
+                //  statusEmail.html("");
+                document.getElementById('ValidateHideImage').style.display = 'none';
+                document.getElementById('ValidateHideButton').style.display = '';
+                statusEmail.html("");
+
+            } else {
+                document.getElementById('ValidateHideImage').style.display = '';
+                document.getElementById('ValidateHideButton').style.display = 'none';
+                statusEmail.html(emailVali + " is already taken!");
+
+            }
+        });
+
+    }
+</script>
+<script type="text/javascript">
+
+    jQuery(function () {
+
+        //document.forms['RegisterForm'].submit();
+
+
+        jQuery("#RegisterViewModel_Username").validate({
+
+            expression: "if (VAL) return true; else return false;",
+            message: "Please enter the User Name"
+        });
+
+        jQuery("#RegisterViewModel_Username").validate({
+            expression: "if (VAL.length > 3) return true; else return false;",
+            message: "User Name must be 4 Characters"
+        });
+        jQuery("#RegisterViewModel_Password").validate({
+            expression: "if (VAL.length > 4 && VAL) return true; else return false;",
+            message: "Please enter a valid Password"
+        });
+        jQuery("#RegisterViewModel_ConfirmPassword").validate({
+            expression: "if ((VAL == jQuery('#RegisterViewModel_Password').val()) && VAL) return true; else return false;",
+            message: "Confirm password field doesn't match the password field"
+        });
+        jQuery("#RegisterViewModel_Email").validate({
+            expression: "if (VAL.match(/^[^\\W][a-zA-Z0-9\\_\\-\\.]+([a-zA-Z0-9\\_\\-\\.]+)*\\@@[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.[a-zA-Z]{2,4}$/)) return true; else return false;",
+            message: "Should be a valid Email id"
+        });
+        //        jQuery("#RegisterViewModel_Phone").validate({
+        //            expression: "if (VAL) return true; else return false;",
+        //            message: "Please enter the Phone Number"
+        //        });
+        jQuery("#RegisterViewModel_ZipCode").validate({
+            expression: "if (VAL) return true; else return false;",
+            message: "enter Zip"
+        });
+        jQuery("#State").validate({
+            expression: "if (VAL) return true; else return false;",
+            message: "Please Select State"
+        });
+        jQuery("#RegisterViewModel_City").validate({
+            expression: "if (VAL) return true; else return false;",
+            message: "Please enter City"
+        });
+        jQuery("#RegisterViewModel_Captcha").validate({
+            expression: "if (VAL) return true; else return false;",
+            message: "Please enter Image Captcha"
+        });
+        //    $("#RegisterForm").validate();
+        $("#ULoginForm").validateLogin();
+    });
+
+    $(function () {
+
+        document.getElementById('GlobalMessageId').style.display = "none";
+        var objNotice = $('.notice');
+        var objError = $('.error');
+        objNotice.attr("style", "display:none");
+        objError.attr("style", "display:none");
+    });
+</script>
+@*      <script>
+             $(document).ready(function () {
+            
+<script type="text/javascript" src="@Url.ThemeContent("~/js/jquery.validateMultiForm.js") "></script>
+             });
+  </script>
+  *@

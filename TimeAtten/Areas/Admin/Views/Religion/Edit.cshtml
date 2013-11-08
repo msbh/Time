@@ -1,0 +1,197 @@
+﻿@model TimeAtten.Models.RELIGIONS
+@{
+    ViewBag.Title = "Create Owner";
+    TimeAtten.Services.Utilities.BreadCrumbList breadcrumbs = ViewBag.BreadCrums;
+    string err = "";
+    try{
+     err="Caution ! "+TempData["ErrorMessage"].ToString();
+    }catch(Exception ert){}
+}
+@Html.Partial("_header")
+<!--close-Header-part-->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+    @Html.Partial("_left", "OwnerCreate")
+    <!-- BEGIN PAGE -->
+    <div class="page-content">
+
+        <!-- BEGIN PAGE CONTAINER-->
+        <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->
+            @{Html.RenderPartial("_breadcrumb", breadcrumbs);}
+            <!-- END PAGE HEADER-->
+            <!-- Form -->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <h4><i class="icon-reorder"></i>Religion Edit</h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+                <div id="err" style="color:#F80606;">
+                    @err
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm(new { @class = "form-horizontal" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        @*<form action="#" class="form-horizontal">*@
+                        <h3 class="form-section">Religion Edit</h3>
+                        <div class="row-fluid">
+                            <div class="span6 ">
+                                <div class="control-group">
+                                    <label class="control-label">Religion Code</label>
+                                    <div class="controls">
+                                           <span class="text">@Model.Relig_Code</span> 
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="span6 ">
+                                <div class="control-group">
+                                   <label class="control-label">Religion Name</label>
+                                    <div class="controls">
+                                        @Html.TextBoxFor(model => model.Description, new { @class = "m-wrap span12" })
+                                        <span class="help-block">@Html.ValidationMessageFor(model => model.Description)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>                        
+                        <div class="form-actions">
+                            <button type="submit" value="Save" class="btn blue"><i class="icon-ok"></i>Edit</button>
+                            @Html.ActionLink("Cancel", "Index", "Religion", new { @class = "btn" })                           
+                        </div>@*
+                                 </form>*@
+                         @Html.HiddenFor(model => model.CreatedBy)
+                         @Html.HiddenFor(model => model.CreatedDate)
+                         @Html.HiddenFor(model => model.EditedBy)
+                         @Html.HiddenFor(model => model.EditedDate)
+                         @Html.HiddenFor(model => model.IsActive)
+                         @Html.HiddenFor(model => model.Relig_Code)
+                    }
+                    <!-- END FORM-->
+                </div>
+                <!-- end form -->
+            </div>
+        </div>
+        <!-- END PAGE -->
+    </div>
+    <!-- END CONTAINER -->
+    </div>
+    @Html.Partial("_footer")
+    <script>
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            App.init();
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            App.setPage("table_editable");
+            App.init();
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+
+            // to fix chosen dropdown width in inactive hidden tab content
+            $('.advance_form_with_chosen_element').on('shown', function (e) {
+                App.initChosenSelect('.chosen_category:visible');
+            });
+
+            // initiate layout and plugins
+            App.init();
+        });
+    </script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
+@*@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RELIGIONS</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Relig_Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Relig_Code)
+            @Html.ValidationMessageFor(model => model.Relig_Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedBy)
+            @Html.ValidationMessageFor(model => model.CreatedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EditedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EditedBy)
+            @Html.ValidationMessageFor(model => model.EditedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedDate)
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EditedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EditedDate)
+            @Html.ValidationMessageFor(model => model.EditedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

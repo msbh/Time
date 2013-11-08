@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dashboard - Zultime</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@Styles.Render("~/Content/themes/Theme/css","~/Content/themes/Theme/css")
+@Scripts.Render("~/bundles/modernizr")
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+        @Html.Partial("_header")
+   
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+
+
+ <!--close-top-Header-menu-->
+<!--sidebar-menu-->
+         @Html.Partial("_left")
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+      @Html.Partial("_breadcrumb")
+<!--End-breadcrumbs-->
+
+<!--Action boxes-->
+  <div class="container-fluid">
+    <div class="quick-actions_homepage">
+      <ul class="quick-actions">
+        <li class="bg_lb"> <a href="#"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
+        <li class="bg_lg span3"> <a href="state.php"> <i class="icon-signal"></i> State</a> </li>        
+        <li class="bg_ls"> <a href="user.php"> <i class="icon-fullscreen"></i> User Accounts</a> </li>
+		 <li class="bg_lb"> <a href="content.php"> <i class="icon-pencil"></i>Contents</a> </li>
+        <li class="bg_lo span3"> <a href="product.php"> <i class="icon-th-list"></i> Products</a> </li>
+      </ul>
+    </div>
+<!--End-Action boxes-->    
+
+<!--Chart-box-->    
+    <div class="row-fluid">
+      <div class="widget-box">
+        <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
+          <h5>Site Analytics</h5>
+        </div>
+        <div class="widget-content" >
+          <div class="row-fluid">
+            <!--<div class="span9">
+              <div class="chart"></div>
+            </div>-->
+            <div class="span3">
+              <ul class="site-stats">
+                <li class="bg_lh"><i class="icon-globe"></i> <strong><?php echo getTotalVisit();?></strong> <small>Total Visits</small></li>
+                <li class="bg_lh"><i class="icon-user" ></i> <strong><?php echo getTotalUser();?></strong> <small>Total Users </small></li>
+                <li class="bg_lh"><i class="icon-plus"></i> <?php echo getLastVisit();?><small>Last Visit</small></li>
+                <li class="bg_lh"><i class="icon-tag"></i> <strong><?php echo getTodayVisitors();?></strong> <small>Today Vistor</small></li>
+                <li class="bg_lh"><i class="icon-repeat"></i> <strong><?php echo getTotalVisitor();?></strong> <small>Total Visitors</small></li>
+                <li class="bg_lh"><i class="icon-plus"></i> <strong><?php echo getMonthVisitors();?></strong> <small>Average Monthly Visitors</small></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--End-Chart-box--> 
+    <hr/>
+    </div>
+</div>
+
+<!--end-main-container-part-->
+
+           @Html.Partial("_footer")
+</body>
+</html>

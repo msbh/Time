@@ -1,0 +1,60 @@
+﻿@model TimeAtten.Services.Utilities.BreadCrumbList
+
+<div class="row-fluid">
+    <div class="span12">
+        <!-- BEGIN STYLE CUSTOMIZER -->
+        <div class="color-panel hidden-phone">
+            <div class="color-mode-icons icon-color"></div>
+            <div class="color-mode-icons icon-color-close"></div>
+            <div class="color-mode">
+                <p>THEME COLOR</p>
+                <ul class="inline">
+                    <li class="color-black current color-default" data-style="default"></li>
+                    <li class="color-blue" data-style="blue"></li>
+                    <li class="color-brown" data-style="brown"></li>
+                    <li class="color-purple" data-style="purple"></li>
+                    <li class="color-white color-light" data-style="light"></li>
+                </ul>
+                <label class="hidden-phone">
+                    <input type="checkbox" class="header" checked value="" />
+                    <span class="color-mode-label">Fixed Header</span>
+                </label>
+            </div>
+        </div>
+        <!-- END BEGIN STYLE CUSTOMIZER -->
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+
+
+
+        <h3 class="page-title"> @Model.CurrentTitle
+        				
+							<small>@Model.SubTitle</small>
+        </h3>
+        <ul class="breadcrumb">
+            @{foreach(TimeAtten.Services.Utilities.BreadCrumb temp in Model.BreadCrumList ){
+           
+
+                 <li>
+                <i class="icon-home"></i>
+                <a href="@temp.url">@temp.BreadCrumbName</a>
+                <i class="icon-angle-right"></i>
+            </li>               
+                
+              }
+              }
+            <li class="pull-right no-text-shadow">
+                <div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
+                    <i class="icon-calendar"></i>
+                    <span></span>
+                    <i class="icon-angle-down"></i>
+
+                </div>
+            </li>
+           
+        </ul>
+
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+

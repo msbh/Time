@@ -1,0 +1,180 @@
+﻿@model IEnumerable<TimeAtten.Models.RELIGIONS>
+
+@{
+    ViewBag.Title = "Index";
+    TimeAtten.Services.Utilities.BreadCrumbList breadcrumbs = ViewBag.BreadCrums;
+    string err = "";
+    try
+    {
+        if(TempData["ErrorMessage"].ToString()!=""){err = "Caution ! " + TempData["ErrorMessage"].ToString();}
+    }
+    catch (Exception ert) { }
+ }
+@Html.Partial("_header")
+<!--close-Header-part-->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+    @Html.Partial("_left","OwnerCreate")
+    <!-- BEGIN PAGE -->
+    <div class="page-content">
+
+        <!-- BEGIN PAGE CONTAINER-->
+        <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->
+               @{Html.RenderPartial("_breadcrumb", breadcrumbs);}
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <h4><i class="icon-edit"></i>Religion </h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+                <div id="err" style="color:#F80606;">
+                    @err
+                </div>
+                <div class="portlet-body">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <span class="btn green">
+                                
+                                @Html.ActionLink("Add New Religion", "Create")
+                                <i class="icon-plus"></i>
+                            </span>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered" id="Owner_table_1">
+                        <thead>
+                            <tr>
+                                <th>
+                                   Religion Code
+                                </th>
+                                 
+                                <th>
+                                   Religion Name
+                                </th>  
+                                
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                <tr class="">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Relig_Code)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>  
+                                    
+                                    
+                                    <td class="edit">
+                                        @Html.ActionLink("Edit", "Edit", new { id=item.Relig_Code  }) |
+                                     @*   @Html.ActionLink("Details", "Details", new {id=item.Desigs_Code   }) |*@
+                                        @Html.ActionLink("Delete", "Delete", new { id=item.Relig_Code   })
+                                    </td>
+                                </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->        
+        </div>
+    </div>
+    <!-- END PAGE -->
+</div>
+<!-- END CONTAINER -->
+@Html.Partial("_footer")
+	
+	<script>
+	    jQuery(document).ready(function () {
+	        // initiate layout and plugins
+	        App.setPage("table_editable");
+	        App.init();
+	    });	  
+	</script>
+@*@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Relig_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Relig_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>*@

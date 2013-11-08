@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e25cdc76702b42b2bb9b8e6862a04252" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="TimeAttenModel.ACTIVEEMPRPT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.AuditLog" Width="1.5" PointX="17.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.COMP_CALENDAR" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.Company" Width="1.5" PointX="13.125" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.companyDesc" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.DESIGS" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.GRPCHILD" Width="1.5" PointX="4.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.HIERGRPS" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.INDTSRPT" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.JobStat" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.LEVELS" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.NATION" Width="1.5" PointX="17.125" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.OVERTIME" Width="1.5" PointX="2.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.Qualification" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.REASONS" Width="1.5" PointX="4.875" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.RELIGIONS" Width="1.5" PointX="8.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.ROT_TZONE" Width="1.5" PointX="6.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.SCHED_TZONE" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.SUMRPT" Width="1.5" PointX="4.875" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TEMP_TXT_DATA" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TEMPREASONS" Width="1.5" PointX="13.125" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TEMPTMP" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TIME_SHEET" Width="1.5" PointX="2.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TIMEZONE" Width="1.5" PointX="4.875" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TOT_REAS" Width="1.5" PointX="2.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TSHEETDATES" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TSMODLOG" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.TZONERPT" Width="1.5" PointX="8.625" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.User" Width="1.5" PointX="13.375" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.WeekPlanner" Width="1.5" PointX="0.625" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TimeAttenModel.EMP_REC" Width="1.5" PointX="19" PointY="1" />
+        <EntityTypeShape EntityType="TimeAttenModel.Online" Width="1.5" PointX="13.25" PointY="14.5" />
+        <EntityTypeShape EntityType="TimeAttenModel.User_Application" Width="1.5" PointX="19.25" PointY="8.625" />
+        <EntityTypeShape EntityType="TimeAttenModel.GroupApplication" Width="1.5" PointX="17.25" PointY="11.5" />
+        <EntityTypeShape EntityType="TimeAttenModel.GroupRole" Width="1.5" PointX="15.375" PointY="9.625" />
+        <EntityTypeShape EntityType="TimeAttenModel.CompanyUser" Width="1.5" PointX="13.25" PointY="1.125" />
+        <EntityTypeShape EntityType="TimeAttenModel.Permission" Width="1.5" PointX="15.25" PointY="3.875" />
+        <EntityTypeShape EntityType="TimeAttenModel.GroupPermission" Width="1.5" PointX="17.25" PointY="7.375" />
+        <EntityTypeShape EntityType="TimeAttenModel.UserGroup" Width="1.5" PointX="15.125" PointY="6.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

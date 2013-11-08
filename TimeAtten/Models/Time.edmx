@@ -1,0 +1,1825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="TimeAttenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+        <EntityContainer Name="TimeAttenModelStoreContainer">
+          <EntitySet Name="ACTIVEEMPRPT" EntityType="TimeAttenModel.Store.ACTIVEEMPRPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AuditLog" EntityType="TimeAttenModel.Store.AuditLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMP_CALENDAR" EntityType="TimeAttenModel.Store.COMP_CALENDAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="TimeAttenModel.Store.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="companyDesc" EntityType="TimeAttenModel.Store.companyDesc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyUser" EntityType="TimeAttenModel.Store.CompanyUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DESIGS" EntityType="TimeAttenModel.Store.DESIGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMP_REC" EntityType="TimeAttenModel.Store.EMP_REC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupApplication" EntityType="TimeAttenModel.Store.GroupApplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupPermission" EntityType="TimeAttenModel.Store.GroupPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupRole" EntityType="TimeAttenModel.Store.GroupRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRPCHILD" EntityType="TimeAttenModel.Store.GRPCHILD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HIERGRPS" EntityType="TimeAttenModel.Store.HIERGRPS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INDTSRPT" EntityType="TimeAttenModel.Store.INDTSRPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobStat" EntityType="TimeAttenModel.Store.JobStat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LEVELS" EntityType="TimeAttenModel.Store.LEVELS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NATION" EntityType="TimeAttenModel.Store.NATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Online" EntityType="TimeAttenModel.Store.Online" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OVERTIME" EntityType="TimeAttenModel.Store.OVERTIME" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permission" EntityType="TimeAttenModel.Store.Permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Qualification" EntityType="TimeAttenModel.Store.Qualification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REASONS" EntityType="TimeAttenModel.Store.REASONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RELIGIONS" EntityType="TimeAttenModel.Store.RELIGIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROT_TZONE" EntityType="TimeAttenModel.Store.ROT_TZONE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCHED_TZONE" EntityType="TimeAttenModel.Store.SCHED_TZONE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUMRPT" EntityType="TimeAttenModel.Store.SUMRPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="TimeAttenModel.Store.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEMP_TXT_DATA" EntityType="TimeAttenModel.Store.TEMP_TXT_DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEMPREASONS" EntityType="TimeAttenModel.Store.TEMPREASONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEMPTMP" EntityType="TimeAttenModel.Store.TEMPTMP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIME_SHEET" EntityType="TimeAttenModel.Store.TIME_SHEET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIMEZONE" EntityType="TimeAttenModel.Store.TIMEZONE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TOT_REAS" EntityType="TimeAttenModel.Store.TOT_REAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSHEETDATES" EntityType="TimeAttenModel.Store.TSHEETDATES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSMODLOG" EntityType="TimeAttenModel.Store.TSMODLOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TZONERPT" EntityType="TimeAttenModel.Store.TZONERPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="TimeAttenModel.Store.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Application" EntityType="TimeAttenModel.Store.User_Application" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserGroup" EntityType="TimeAttenModel.Store.UserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeekPlanner" EntityType="TimeAttenModel.Store.WeekPlanner" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="ACTIVEEMPRPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="AppUser" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="Timezone_Code" Type="smallint" />
+          <Property Name="HierCode" MaxLength="900" Type="nvarchar" />
+          <Property Name="Desigs" MaxLength="40" Type="nvarchar" />
+          <Property Name="Nation" MaxLength="40" Type="nvarchar" />
+          <Property Name="Religion" MaxLength="40" Type="nvarchar" />
+          <Property Name="EName" MaxLength="100" Type="nvarchar" />
+          <Property Name="JoinDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Action" MaxLength="500" Type="nvarchar" />
+          <Property Name="FirstName" MaxLength="50" Type="nvarchar" />
+          <Property Name="LastName" MaxLength="50" Type="nvarchar" />
+          <Property Name="Date" MaxLength="50" Type="nvarchar" />
+          <Property Name="Object" MaxLength="500" Type="nvarchar" />
+          <Property Name="Description" MaxLength="1000" Type="nvarchar" />
+          <Property Name="Module" MaxLength="50" Type="nvarchar" />
+          <Property Name="userId" Type="int" />
+          <Property Name="ip" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="COMP_CALENDAR">
+          <Key>
+            <PropertyRef Name="Cal_Code" />
+          </Key>
+          <Property Name="Cal_Code" Nullable="false" Type="int" />
+          <Property Name="Description" Nullable="false" MaxLength="40" Type="nvarchar" />
+          <Property Name="From_Date" Nullable="false" Type="datetime" />
+          <Property Name="To_Date" Nullable="false" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="CompanyName" MaxLength="100" Type="nvarchar" />
+          <Property Name="userId" Nullable="false" Type="int" />
+          <Property Name="CompanyLogo" MaxLength="100" Type="nvarchar" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="companyDesc">
+          <Key>
+            <PropertyRef Name="CompanyDetailId" />
+          </Key>
+          <Property Name="CompanyDetailId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="userId" Nullable="false" Type="int" />
+          <Property Name="FullName" MaxLength="100" Type="nvarchar" />
+          <Property Name="ShortName" MaxLength="50" Type="nvarchar" />
+          <Property Name="Industry" MaxLength="100" Type="nvarchar" />
+          <Property Name="BuisenesNo" MaxLength="50" Type="nvarchar" />
+          <Property Name="EmployeeNo" MaxLength="50" Type="nvarchar" />
+          <Property Name="Address1" MaxLength="100" Type="nvarchar" />
+          <Property Name="Address2" MaxLength="100" Type="nvarchar" />
+          <Property Name="city" MaxLength="50" Type="nvarchar" />
+          <Property Name="country" MaxLength="50" Type="nvarchar" />
+          <Property Name="state" MaxLength="50" Type="nvarchar" />
+          <Property Name="zip" MaxLength="20" Type="nvarchar" />
+          <Property Name="phone" MaxLength="20" Type="nvarchar" />
+          <Property Name="fax" MaxLength="20" Type="nvarchar" />
+          <Property Name="AdminContact" MaxLength="20" Type="nvarchar" />
+          <Property Name="BillingContact" MaxLength="20" Type="nvarchar" />
+          <Property Name="support" MaxLength="20" Type="nvarchar" />
+          <Property Name="originatorId" MaxLength="20" Type="nvarchar" />
+          <Property Name="DataCenter" MaxLength="50" Type="nvarchar" />
+          <Property Name="CompanyId" Nullable="false" Type="int" />
+        </EntityType>
+        <EntityType Name="CompanyUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="50" Type="nvarchar" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="EditedDate" MaxLength="50" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="DESIGS">
+          <Key>
+            <PropertyRef Name="Desigs_Code" />
+          </Key>
+          <Property Name="Desigs_Code" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Description" Nullable="false" MaxLength="40" Type="nvarchar" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="EditedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="EMP_REC">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" StoreGeneratedPattern="Identity" Type="bigint" />
+          <Property Name="CardID" Type="bigint" />
+          <Property Name="First_Name" MaxLength="25" Type="nvarchar" />
+          <Property Name="Last_Name" MaxLength="25" Type="nvarchar" />
+          <Property Name="Gender" MaxLength="50" Type="nvarchar" />
+          <Property Name="Nation_Code" Type="int" />
+          <Property Name="Relig_Code" Type="int" />
+          <Property Name="Desigs_Code" Type="int" />
+          <Property Name="StatCode" Type="int" />
+          <Property Name="QualCode" Type="int" />
+          <Property Name="Mer_Stat" MaxLength="1" Type="varchar" />
+          <Property Name="B_Date" MaxLength="50" Type="nvarchar" />
+          <Property Name="J_Date" MaxLength="50" Type="nvarchar" />
+          <Property Name="R_Date" MaxLength="50" Type="nvarchar" />
+          <Property Name="Timezone_Code" Type="smallint" />
+          <Property Name="TZone_Status" MaxLength="10" Type="varchar" />
+          <Property Name="Service_Stat" Type="tinyint" />
+          <Property Name="AutoFill" Type="tinyint" />
+          <Property Name="FlexTime" Type="tinyint" />
+          <Property Name="PunchOnce" Type="tinyint" />
+          <Property Name="UsrTemplate" MaxLength="35" Type="varchar" />
+          <Property Name="Reject" Type="smallint" />
+          <Property Name="Authority" Type="smallint" />
+          <Property Name="Email" MaxLength="50" Type="varchar" />
+          <Property Name="HierCode" MaxLength="900" Type="varchar" />
+          <Property Name="GraceMins" Type="smallint" />
+          <Property Name="PlanCode" Type="int" />
+          <Property Name="City" MaxLength="200" Type="varchar" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Zipcode" MaxLength="20" Type="varchar" />
+          <Property Name="Address" MaxLength="500" Type="varchar" />
+        </EntityType>
+        <EntityType Name="GroupApplication">
+          <Key>
+            <PropertyRef Name="GroupApplicationId" />
+          </Key>
+          <Property Name="GroupApplicationId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="GroupRoleId" Nullable="false" Type="int" />
+          <Property Name="ApplicationId" Nullable="false" Type="int" />
+        </EntityType>
+        <EntityType Name="GroupPermission">
+          <Key>
+            <PropertyRef Name="GroupPermissionId" />
+          </Key>
+          <Property Name="GroupPermissionId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="GroupRoleId" Type="int" />
+          <Property Name="Permission" MaxLength="50" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="50" Type="nvarchar" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="EditedDate" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="GroupRole">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="GroupId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="GroupName" MaxLength="50" Type="nvarchar" />
+          <Property Name="Description" MaxLength="100" Type="nvarchar" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="EditedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="GRPCHILD">
+          <Key>
+            <PropertyRef Name="HierCode" />
+          </Key>
+          <Property Name="HierCode" Nullable="false" MaxLength="900" Type="varchar" />
+          <Property Name="GrpCode" MaxLength="15" Type="varchar" />
+        </EntityType>
+        <EntityType Name="HIERGRPS">
+          <Key>
+            <PropertyRef Name="GrpCode" />
+            <PropertyRef Name="LvlCode" />
+          </Key>
+          <Property Name="GrpCode" Nullable="false" MaxLength="15" Type="varchar" />
+          <Property Name="LvlCode" Nullable="false" Type="int" />
+          <Property Name="GrpDesc" Nullable="false" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="INDTSRPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="AppUser" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="EName" MaxLength="100" Type="nvarchar" />
+          <Property Name="HierCode" MaxLength="900" Type="nvarchar" />
+          <Property Name="Desig" MaxLength="40" Type="nvarchar" />
+          <Property Name="P_Date" Type="datetime" />
+          <Property Name="IN1" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT1" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN2" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT2" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN3" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT3" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN4" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT4" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN5" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT5" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN6" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT6" MaxLength="10" Type="nvarchar" />
+          <Property Name="Remarks" MaxLength="200" Type="nvarchar" />
+          <Property Name="Status" MaxLength="15" Type="nvarchar" />
+          <Property Name="Day_Status" MaxLength="5" Type="nvarchar" />
+          <Property Name="Mod_Field" MaxLength="15" Type="nvarchar" />
+          <Property Name="Overtime" MaxLength="10" Type="nvarchar" />
+          <Property Name="ExMins" Type="int" />
+          <Property Name="LateMins" Type="int" />
+          <Property Name="GraceMins" Type="int" />
+          <Property Name="TZoneIn1" MaxLength="10" Type="nvarchar" />
+          <Property Name="WorkMins" Type="bigint" />
+          <Property Name="BreakMins" Type="bigint" />
+        </EntityType>
+        <EntityType Name="JobStat">
+          <Key>
+            <PropertyRef Name="StatCode" />
+          </Key>
+          <Property Name="StatCode" Nullable="false" Type="int" />
+          <Property Name="StatDesc" Nullable="false" MaxLength="40" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="LEVELS">
+          <Key>
+            <PropertyRef Name="LvlCode" />
+          </Key>
+          <Property Name="LvlCode" Nullable="false" Type="int" />
+          <Property Name="LvlDesc" Nullable="false" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="NATION">
+          <Key>
+            <PropertyRef Name="Nation_Code" />
+          </Key>
+          <Property Name="Nation_Code" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Description" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="CallCode" MaxLength="10" Type="nvarchar" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="EditedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Online">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="OnlinePin" Type="int" />
+          <Property Name="OnlineTime" MaxLength="50" Type="nvarchar" />
+          <Property Name="ip" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="OVERTIME">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="FDate" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="FDate" Nullable="false" Type="datetime" />
+          <Property Name="Overtime" Precision="4" Scale="2" Type="decimal" />
+          <Property Name="Cal_Overtime" MaxLength="10" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Value" Type="int" />
+          <Property Name="PermissionName" MaxLength="50" Type="nvarchar" />
+          <Property Name="Description" MaxLength="50" Type="nvarchar" />
+          <Property Name="Action" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="QualCode" />
+          </Key>
+          <Property Name="QualCode" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="QualDesc" Nullable="false" MaxLength="40" Type="nvarchar" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="EditedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="REASONS">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="Reas_Code" />
+            <PropertyRef Name="FDate" />
+            <PropertyRef Name="TDate" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="Reas_Code" Nullable="false" Type="int" />
+          <Property Name="FDate" Nullable="false" Type="datetime" />
+          <Property Name="TDate" Nullable="false" Type="datetime" />
+          <Property Name="isPaid" Type="tinyint" />
+          <Property Name="ReasNotes" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="RELIGIONS">
+          <Key>
+            <PropertyRef Name="Relig_Code" />
+          </Key>
+          <Property Name="Relig_Code" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Description" Nullable="false" MaxLength="40" Type="nvarchar" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="EditedDate" MaxLength="100" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ROT_TZONE">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="TZone_Code" Nullable="false" Type="smallint" />
+          <Property Name="TZone_Code2" Nullable="false" Type="smallint" />
+          <Property Name="TZone_Code3" Type="smallint" />
+          <Property Name="From_Date" Nullable="false" Type="datetime" />
+          <Property Name="Days" Nullable="false" Type="tinyint" />
+          <Property Name="Holidays" Nullable="false" Type="tinyint" />
+          <Property Name="HoliMode" Nullable="false" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="SCHED_TZONE">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="FDate" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="Timezone_Code" Nullable="false" Type="smallint" />
+          <Property Name="FDate" Nullable="false" Type="datetime" />
+          <Property Name="TDate" Nullable="false" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SUMRPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="AppUser" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="EName" MaxLength="100" Type="nvarchar" />
+          <Property Name="FriOV" Precision="9" Scale="2" Type="decimal" />
+          <Property Name="RegOV" Precision="9" Scale="2" Type="decimal" />
+          <Property Name="Absent" Type="int" />
+          <Property Name="Late" MaxLength="10" Type="nvarchar" />
+          <Property Name="SickReason" Type="smallint" />
+          <Property Name="PayReason" Type="smallint" />
+          <Property Name="OtherReason" Type="smallint" />
+          <Property Name="LateDays" Type="int" />
+          <Property Name="Late1" Type="int" />
+          <Property Name="WHours" Type="int" />
+          <Property Name="WHoursStr" MaxLength="50" Type="varchar" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="principal_id" Nullable="false" Type="int" />
+          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TEMP_TXT_DATA">
+          <Key>
+            <PropertyRef Name="ReaderID" />
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="P_Date" />
+            <PropertyRef Name="P_Time" />
+            <PropertyRef Name="TACode" />
+          </Key>
+          <Property Name="ReaderID" Nullable="false" Type="smallint" />
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="P_Date" Nullable="false" Type="datetime" />
+          <Property Name="P_Time" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="TACode" Nullable="false" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TEMPREASONS">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="Reas_Code" />
+            <PropertyRef Name="FDate" />
+            <PropertyRef Name="TDate" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="Reas_Code" Nullable="false" Type="int" />
+          <Property Name="FDate" Nullable="false" Type="datetime" />
+          <Property Name="TDate" Nullable="false" Type="datetime" />
+          <Property Name="ReasNotes" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="TEMPTMP">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="UsrTemplate" Nullable="false" MaxLength="35" Type="varchar" />
+          <Property Name="Reject" Nullable="false" Type="smallint" />
+          <Property Name="Authority" Nullable="false" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TIME_SHEET">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="P_Date" />
+          </Key>
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="P_Date" Nullable="false" Type="datetime" />
+          <Property Name="IN1" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT1" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN2" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT2" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN3" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT3" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN4" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT4" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN5" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT5" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN6" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT6" MaxLength="10" Type="nvarchar" />
+          <Property Name="Timezone_Code" Nullable="false" Type="smallint" />
+          <Property Name="Pending" Type="tinyint" />
+          <Property Name="Calen_Day" Type="int" />
+          <Property Name="Reas_Code" Type="int" />
+          <Property Name="Last_Punch" MaxLength="10" Type="nvarchar" />
+          <Property Name="Mod_Fields" MaxLength="15" Type="varchar" />
+          <Property Name="Day_Status" Nullable="false" Type="tinyint" />
+          <Property Name="Overtime" Precision="4" Scale="2" Type="decimal" />
+          <Property Name="TranCount" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="TIMEZONE">
+          <Key>
+            <PropertyRef Name="Timezone_Code" />
+          </Key>
+          <Property Name="Timezone_Code" Nullable="false" Type="smallint" />
+          <Property Name="Description" Nullable="false" MaxLength="40" Type="nvarchar" />
+          <Property Name="IN1" Nullable="false" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT1" Nullable="false" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN2" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT2" MaxLength="10" Type="nvarchar" />
+          <Property Name="IN3" MaxLength="10" Type="nvarchar" />
+          <Property Name="OUT3" MaxLength="10" Type="nvarchar" />
+          <Property Name="Shifts" Type="tinyint" />
+          <Property Name="HalfDayOut" MaxLength="10" Type="nvarchar" />
+          <Property Name="Working_Days" MaxLength="7" Type="varchar" />
+          <Property Name="Half_Days" MaxLength="7" Type="varchar" />
+          <Property Name="Holi_Days" MaxLength="7" Type="varchar" />
+          <Property Name="NightShift" Nullable="false" Type="tinyint" />
+          <Property Name="HalfDayIn" MaxLength="10" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="TOT_REAS">
+          <Key>
+            <PropertyRef Name="Re_Code" />
+          </Key>
+          <Property Name="Re_Code" Nullable="false" Type="int" />
+          <Property Name="Description" MaxLength="40" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="TSHEETDATES">
+          <Key>
+            <PropertyRef Name="TSDate" />
+          </Key>
+          <Property Name="TSDate" Nullable="false" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TSMODLOG">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="TSDate" />
+            <PropertyRef Name="ModDate" />
+            <PropertyRef Name="ModTime" />
+            <PropertyRef Name="ModReas" />
+          </Key>
+          <Property Name="AppUser" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="TSDate" Nullable="false" Type="datetime" />
+          <Property Name="ModDate" Nullable="false" Type="datetime" />
+          <Property Name="ModTime" Nullable="false" Type="datetime" />
+          <Property Name="ModReas" Nullable="false" MaxLength="4000" Type="varchar" />
+        </EntityType>
+        <EntityType Name="TZONERPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="EName" />
+            <PropertyRef Name="Timezone_Code" />
+          </Key>
+          <Property Name="AppUser" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Pin_Code" Nullable="false" Type="bigint" />
+          <Property Name="P_Date" Type="datetime" />
+          <Property Name="EName" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="HierCode" MaxLength="4000" Type="varchar" />
+          <Property Name="Desig" MaxLength="40" Type="nvarchar" />
+          <Property Name="Timezone_Code" Nullable="false" Type="smallint" />
+          <Property Name="In1" MaxLength="10" Type="varchar" />
+          <Property Name="Out1" MaxLength="10" Type="varchar" />
+          <Property Name="In2" MaxLength="10" Type="varchar" />
+          <Property Name="Out2" MaxLength="10" Type="varchar" />
+          <Property Name="In3" MaxLength="10" Type="varchar" />
+          <Property Name="Out3" MaxLength="10" Type="varchar" />
+          <Property Name="Shifts" Type="tinyint" />
+          <Property Name="HalfDayOut" MaxLength="10" Type="nvarchar" />
+          <Property Name="Working_Days" MaxLength="7" Type="varchar" />
+          <Property Name="Half_Days" MaxLength="7" Type="varchar" />
+          <Property Name="Holi_Days" MaxLength="7" Type="varchar" />
+          <Property Name="NighShift" Type="tinyint" />
+          <Property Name="HalfDayIn" MaxLength="10" Type="varchar" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="PinCode" Type="bigint" />
+          <Property Name="UserName" MaxLength="100" Type="varchar" />
+          <Property Name="Password" MaxLength="100" Type="varchar" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="email" MaxLength="100" Type="nvarchar" />
+          <Property Name="IsAdmin" Type="int" />
+          <Property Name="IsSuperAdmin" Type="int" />
+          <Property Name="CreatedBy" MaxLength="100" Type="nvarchar" />
+          <Property Name="CreatedDate" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="User_Application">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="ApplicationName" MaxLength="50" Type="nvarchar" />
+          <Property Name="Description" MaxLength="50" Type="nvarchar" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="50" Type="nvarchar" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="EditedDate" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroupId" />
+          </Key>
+          <Property Name="UserGroupId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="EditedBy" Type="int" />
+          <Property Name="CreatedDate" MaxLength="50" Type="nvarchar" />
+          <Property Name="EditedDate" MaxLength="50" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WeekPlanner">
+          <Key>
+            <PropertyRef Name="PlanCode" />
+          </Key>
+          <Property Name="PlanCode" Nullable="false" Type="int" />
+          <Property Name="PlanDesc" MaxLength="30" Type="nvarchar" />
+          <Property Name="TZones" MaxLength="50" Type="varchar" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TimeAttenModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TimeAttenEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ACTIVEEMPRPT" EntityType="TimeAttenModel.ACTIVEEMPRPT" />
+          <EntitySet Name="AuditLog" EntityType="TimeAttenModel.AuditLog" />
+          <EntitySet Name="COMP_CALENDAR" EntityType="TimeAttenModel.COMP_CALENDAR" />
+          <EntitySet Name="Company" EntityType="TimeAttenModel.Company" />
+          <EntitySet Name="companyDesc" EntityType="TimeAttenModel.companyDesc" />
+          <EntitySet Name="DESIGS" EntityType="TimeAttenModel.DESIGS" />
+          <EntitySet Name="GRPCHILD" EntityType="TimeAttenModel.GRPCHILD" />
+          <EntitySet Name="HIERGRPS" EntityType="TimeAttenModel.HIERGRPS" />
+          <EntitySet Name="INDTSRPT" EntityType="TimeAttenModel.INDTSRPT" />
+          <EntitySet Name="JobStat" EntityType="TimeAttenModel.JobStat" />
+          <EntitySet Name="LEVELS" EntityType="TimeAttenModel.LEVELS" />
+          <EntitySet Name="NATION" EntityType="TimeAttenModel.NATION" />
+          <EntitySet Name="OVERTIME" EntityType="TimeAttenModel.OVERTIME" />
+          <EntitySet Name="Qualification" EntityType="TimeAttenModel.Qualification" />
+          <EntitySet Name="REASONS" EntityType="TimeAttenModel.REASONS" />
+          <EntitySet Name="RELIGIONS" EntityType="TimeAttenModel.RELIGIONS" />
+          <EntitySet Name="ROT_TZONE" EntityType="TimeAttenModel.ROT_TZONE" />
+          <EntitySet Name="SCHED_TZONE" EntityType="TimeAttenModel.SCHED_TZONE" />
+          <EntitySet Name="SUMRPT" EntityType="TimeAttenModel.SUMRPT" />
+          <EntitySet Name="sysdiagrams" EntityType="TimeAttenModel.sysdiagrams" />
+          <EntitySet Name="TEMP_TXT_DATA" EntityType="TimeAttenModel.TEMP_TXT_DATA" />
+          <EntitySet Name="TEMPREASONS" EntityType="TimeAttenModel.TEMPREASONS" />
+          <EntitySet Name="TEMPTMP" EntityType="TimeAttenModel.TEMPTMP" />
+          <EntitySet Name="TIME_SHEET" EntityType="TimeAttenModel.TIME_SHEET" />
+          <EntitySet Name="TIMEZONE" EntityType="TimeAttenModel.TIMEZONE" />
+          <EntitySet Name="TOT_REAS" EntityType="TimeAttenModel.TOT_REAS" />
+          <EntitySet Name="TSHEETDATES" EntityType="TimeAttenModel.TSHEETDATES" />
+          <EntitySet Name="TSMODLOG" EntityType="TimeAttenModel.TSMODLOG" />
+          <EntitySet Name="TZONERPT" EntityType="TimeAttenModel.TZONERPT" />
+          <EntitySet Name="User" EntityType="TimeAttenModel.User" />
+          <EntitySet Name="WeekPlanner" EntityType="TimeAttenModel.WeekPlanner" />
+          <EntitySet Name="EMP_REC" EntityType="TimeAttenModel.EMP_REC" />
+          <EntitySet Name="Online" EntityType="TimeAttenModel.Online" />
+          <EntitySet Name="User_Application" EntityType="TimeAttenModel.User_Application" />
+          <EntitySet Name="GroupApplication" EntityType="TimeAttenModel.GroupApplication" />
+          <EntitySet Name="GroupRole" EntityType="TimeAttenModel.GroupRole" />
+          <EntitySet Name="CompanyUser" EntityType="TimeAttenModel.CompanyUser" />
+          <EntitySet Name="Permission" EntityType="TimeAttenModel.Permission" />
+          <EntitySet Name="GroupPermission" EntityType="TimeAttenModel.GroupPermission" />
+          <EntitySet Name="UserGroup" EntityType="TimeAttenModel.UserGroup" />
+        </EntityContainer>
+        <EntityType Name="ACTIVEEMPRPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="AppUser" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="Timezone_Code" Type="Int16" />
+          <Property Name="HierCode" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+          <Property Name="Desigs" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="Nation" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="Religion" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="EName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="JoinDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Action" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Date" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Object" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Module" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="ip" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="userId" />
+        </EntityType>
+        <EntityType Name="COMP_CALENDAR">
+          <Key>
+            <PropertyRef Name="Cal_Code" />
+          </Key>
+          <Property Name="Cal_Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="From_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="To_Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="CompanyLogo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="ParentId" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="companyDesc">
+          <Key>
+            <PropertyRef Name="CompanyDetailId" />
+          </Key>
+          <Property Name="CompanyDetailId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ShortName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Industry" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BuisenesNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EmployeeNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="zip" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="AdminContact" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="BillingContact" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="support" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="originatorId" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DataCenter" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="CompanyId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DESIGS">
+          <Key>
+            <PropertyRef Name="Desigs_Code" />
+          </Key>
+          <Property Name="Desigs_Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EditedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="GRPCHILD">
+          <Key>
+            <PropertyRef Name="HierCode" />
+          </Key>
+          <Property Name="HierCode" Type="String" Nullable="false" MaxLength="900" Unicode="false" FixedLength="false" />
+          <Property Name="GrpCode" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="HIERGRPS">
+          <Key>
+            <PropertyRef Name="GrpCode" />
+            <PropertyRef Name="LvlCode" />
+          </Key>
+          <Property Name="GrpCode" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="LvlCode" Type="Int32" Nullable="false" />
+          <Property Name="GrpDesc" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="INDTSRPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="AppUser" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="EName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="HierCode" Type="String" MaxLength="900" Unicode="true" FixedLength="false" />
+          <Property Name="Desig" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="P_Date" Type="DateTime" Precision="3" />
+          <Property Name="IN1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN2" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT2" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN3" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT3" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN4" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT4" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN5" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT5" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN6" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT6" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Day_Status" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Mod_Field" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Overtime" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ExMins" Type="Int32" />
+          <Property Name="LateMins" Type="Int32" />
+          <Property Name="GraceMins" Type="Int32" />
+          <Property Name="TZoneIn1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="WorkMins" Type="Int64" />
+          <Property Name="BreakMins" Type="Int64" />
+        </EntityType>
+        <EntityType Name="JobStat">
+          <Key>
+            <PropertyRef Name="StatCode" />
+          </Key>
+          <Property Name="StatCode" Type="Int32" Nullable="false" />
+          <Property Name="StatDesc" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LEVELS">
+          <Key>
+            <PropertyRef Name="LvlCode" />
+          </Key>
+          <Property Name="LvlCode" Type="Int32" Nullable="false" />
+          <Property Name="LvlDesc" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="NATION">
+          <Key>
+            <PropertyRef Name="Nation_Code" />
+          </Key>
+          <Property Name="Nation_Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="CallCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EditedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="OVERTIME">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="FDate" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="FDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Overtime1" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="Cal_Overtime" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="QualCode" />
+          </Key>
+          <Property Name="QualCode" Type="Int32" Nullable="false" />
+          <Property Name="QualDesc" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EditedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="REASONS">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="Reas_Code" />
+            <PropertyRef Name="FDate" />
+            <PropertyRef Name="TDate" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="Reas_Code" Type="Int32" Nullable="false" />
+          <Property Name="FDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isPaid" Type="Byte" />
+          <Property Name="ReasNotes" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="RELIGIONS">
+          <Key>
+            <PropertyRef Name="Relig_Code" />
+          </Key>
+          <Property Name="Relig_Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EditedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="ROT_TZONE">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="TZone_Code" Type="Int16" Nullable="false" />
+          <Property Name="TZone_Code2" Type="Int16" Nullable="false" />
+          <Property Name="TZone_Code3" Type="Int16" />
+          <Property Name="From_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Days" Type="Byte" Nullable="false" />
+          <Property Name="Holidays" Type="Byte" Nullable="false" />
+          <Property Name="HoliMode" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SCHED_TZONE">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="FDate" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="Timezone_Code" Type="Int16" Nullable="false" />
+          <Property Name="FDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="SUMRPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="AppUser" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="EName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FriOV" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="RegOV" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="Absent" Type="Int32" />
+          <Property Name="Late" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="SickReason" Type="Int16" />
+          <Property Name="PayReason" Type="Int16" />
+          <Property Name="OtherReason" Type="Int16" />
+          <Property Name="LateDays" Type="Int32" />
+          <Property Name="Late1" Type="Int32" />
+          <Property Name="WHours" Type="Int32" />
+          <Property Name="WHoursStr" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TEMP_TXT_DATA">
+          <Key>
+            <PropertyRef Name="ReaderID" />
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="P_Date" />
+            <PropertyRef Name="P_Time" />
+            <PropertyRef Name="TACode" />
+          </Key>
+          <Property Name="ReaderID" Type="Int16" Nullable="false" />
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="P_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="P_Time" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TACode" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TEMPREASONS">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="Reas_Code" />
+            <PropertyRef Name="FDate" />
+            <PropertyRef Name="TDate" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="Reas_Code" Type="Int32" Nullable="false" />
+          <Property Name="FDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReasNotes" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TEMPTMP">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="UsrTemplate" Type="String" Nullable="false" MaxLength="35" Unicode="false" FixedLength="false" />
+          <Property Name="Reject" Type="Int16" Nullable="false" />
+          <Property Name="Authority" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIME_SHEET">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="P_Date" />
+          </Key>
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="P_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IN1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT1" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN2" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT2" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN3" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT3" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN4" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT4" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN5" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT5" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN6" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT6" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Timezone_Code" Type="Int16" Nullable="false" />
+          <Property Name="Pending" Type="Byte" />
+          <Property Name="Calen_Day" Type="Int32" />
+          <Property Name="Reas_Code" Type="Int32" />
+          <Property Name="Last_Punch" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Mod_Fields" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Day_Status" Type="Byte" Nullable="false" />
+          <Property Name="Overtime" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="TranCount" Type="Byte" />
+        </EntityType>
+        <EntityType Name="TIMEZONE">
+          <Key>
+            <PropertyRef Name="Timezone_Code" />
+          </Key>
+          <Property Name="Timezone_Code" Type="Int16" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="IN1" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT1" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN2" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT2" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IN3" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OUT3" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Shifts" Type="Byte" />
+          <Property Name="HalfDayOut" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Working_Days" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="Half_Days" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="Holi_Days" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="NightShift" Type="Byte" Nullable="false" />
+          <Property Name="HalfDayIn" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TOT_REAS">
+          <Key>
+            <PropertyRef Name="Re_Code" />
+          </Key>
+          <Property Name="Re_Code" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TSHEETDATES">
+          <Key>
+            <PropertyRef Name="TSDate" />
+          </Key>
+          <Property Name="TSDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TSMODLOG">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="TSDate" />
+            <PropertyRef Name="ModDate" />
+            <PropertyRef Name="ModTime" />
+            <PropertyRef Name="ModReas" />
+          </Key>
+          <Property Name="AppUser" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="TSDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModReas" Type="String" Nullable="false" MaxLength="4000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TZONERPT">
+          <Key>
+            <PropertyRef Name="AppUser" />
+            <PropertyRef Name="Pin_Code" />
+            <PropertyRef Name="EName" />
+            <PropertyRef Name="Timezone_Code" />
+          </Key>
+          <Property Name="AppUser" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pin_Code" Type="Int64" Nullable="false" />
+          <Property Name="P_Date" Type="DateTime" Precision="3" />
+          <Property Name="EName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="HierCode" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="Desig" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="Timezone_Code" Type="Int16" Nullable="false" />
+          <Property Name="In1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Out1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="In2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Out2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="In3" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Out3" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Shifts" Type="Byte" />
+          <Property Name="HalfDayOut" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Working_Days" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="Half_Days" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="Holi_Days" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="NighShift" Type="Byte" />
+          <Property Name="HalfDayIn" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PinCode" Type="Int64" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Type="String" Name="email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IsAdmin" />
+          <Property Type="Int32" Name="IsSuperAdmin" />
+          <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WeekPlanner">
+          <Key>
+            <PropertyRef Name="PlanCode" />
+          </Key>
+          <Property Name="PlanCode" Type="Int32" Nullable="false" />
+          <Property Name="PlanDesc" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="TZones" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EMP_REC">
+          <Key>
+            <PropertyRef Name="Pin_Code" />
+          </Key>
+          <Property Type="Int64" Name="Pin_Code" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CardID" />
+          <Property Type="String" Name="First_Name" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Last_Name" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Nation_Code" />
+          <Property Type="Int32" Name="Relig_Code" />
+          <Property Type="Int32" Name="Desigs_Code" />
+          <Property Type="Int32" Name="StatCode" />
+          <Property Type="Int32" Name="QualCode" />
+          <Property Type="String" Name="Mer_Stat" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="B_Date" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="J_Date" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="R_Date" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Timezone_Code" />
+          <Property Type="String" Name="TZone_Status" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="Service_Stat" />
+          <Property Type="Byte" Name="AutoFill" />
+          <Property Type="Byte" Name="FlexTime" />
+          <Property Type="Byte" Name="PunchOnce" />
+          <Property Type="String" Name="UsrTemplate" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Reject" />
+          <Property Type="Int16" Name="Authority" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HierCode" MaxLength="900" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="GraceMins" />
+          <Property Type="Int32" Name="PlanCode" />
+          <Property Type="String" Name="City" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="String" Name="Zipcode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Online">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OnlinePin" />
+          <Property Type="String" Name="OnlineTime" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ip" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User_Application">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Type="Int32" Name="ApplicationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ApplicationName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="EditedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GroupApplication">
+          <Key>
+            <PropertyRef Name="GroupApplicationId" />
+          </Key>
+          <Property Type="Int32" Name="GroupApplicationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="GroupRoleId" Nullable="false" />
+          <Property Type="Int32" Name="ApplicationId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupRole">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Type="Int32" Name="CompanyId" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="GroupName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="EditedDate" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="CompanyUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="CompanyId" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="EditedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Value" />
+          <Property Type="String" Name="PermissionName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Action" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GroupPermission">
+          <Key>
+            <PropertyRef Name="GroupPermissionId" />
+          </Key>
+          <Property Type="Int32" Name="GroupPermissionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="GroupRoleId" />
+          <Property Type="String" Name="Permission" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="EditedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroupId" />
+          </Key>
+          <Property Type="Int32" Name="UserGroupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="GroupID" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="Int32" Name="EditedBy" />
+          <Property Type="String" Name="CreatedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EditedDate" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TimeAttenModelStoreContainer" CdmEntityContainer="TimeAttenEntities1">
+          <EntitySetMapping Name="ACTIVEEMPRPT">
+            <EntityTypeMapping TypeName="TimeAttenModel.ACTIVEEMPRPT">
+              <MappingFragment StoreEntitySet="ACTIVEEMPRPT">
+                <ScalarProperty Name="AppUser" ColumnName="AppUser" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="Timezone_Code" ColumnName="Timezone_Code" />
+                <ScalarProperty Name="HierCode" ColumnName="HierCode" />
+                <ScalarProperty Name="Desigs" ColumnName="Desigs" />
+                <ScalarProperty Name="Nation" ColumnName="Nation" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLog">
+            <EntityTypeMapping TypeName="TimeAttenModel.AuditLog">
+              <MappingFragment StoreEntitySet="AuditLog">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Object" ColumnName="Object" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMP_CALENDAR">
+            <EntityTypeMapping TypeName="TimeAttenModel.COMP_CALENDAR">
+              <MappingFragment StoreEntitySet="COMP_CALENDAR">
+                <ScalarProperty Name="Cal_Code" ColumnName="Cal_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+                <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="TimeAttenModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="companyDesc">
+            <EntityTypeMapping TypeName="TimeAttenModel.companyDesc">
+              <MappingFragment StoreEntitySet="companyDesc">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="BuisenesNo" ColumnName="BuisenesNo" />
+                <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="AdminContact" ColumnName="AdminContact" />
+                <ScalarProperty Name="BillingContact" ColumnName="BillingContact" />
+                <ScalarProperty Name="support" ColumnName="support" />
+                <ScalarProperty Name="originatorId" ColumnName="originatorId" />
+                <ScalarProperty Name="DataCenter" ColumnName="DataCenter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DESIGS">
+            <EntityTypeMapping TypeName="TimeAttenModel.DESIGS">
+              <MappingFragment StoreEntitySet="DESIGS">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Desigs_Code" ColumnName="Desigs_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRPCHILD">
+            <EntityTypeMapping TypeName="TimeAttenModel.GRPCHILD">
+              <MappingFragment StoreEntitySet="GRPCHILD">
+                <ScalarProperty Name="HierCode" ColumnName="HierCode" />
+                <ScalarProperty Name="GrpCode" ColumnName="GrpCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HIERGRPS">
+            <EntityTypeMapping TypeName="TimeAttenModel.HIERGRPS">
+              <MappingFragment StoreEntitySet="HIERGRPS">
+                <ScalarProperty Name="GrpCode" ColumnName="GrpCode" />
+                <ScalarProperty Name="LvlCode" ColumnName="LvlCode" />
+                <ScalarProperty Name="GrpDesc" ColumnName="GrpDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INDTSRPT">
+            <EntityTypeMapping TypeName="TimeAttenModel.INDTSRPT">
+              <MappingFragment StoreEntitySet="INDTSRPT">
+                <ScalarProperty Name="AppUser" ColumnName="AppUser" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="HierCode" ColumnName="HierCode" />
+                <ScalarProperty Name="Desig" ColumnName="Desig" />
+                <ScalarProperty Name="P_Date" ColumnName="P_Date" />
+                <ScalarProperty Name="IN1" ColumnName="IN1" />
+                <ScalarProperty Name="OUT1" ColumnName="OUT1" />
+                <ScalarProperty Name="IN2" ColumnName="IN2" />
+                <ScalarProperty Name="OUT2" ColumnName="OUT2" />
+                <ScalarProperty Name="IN3" ColumnName="IN3" />
+                <ScalarProperty Name="OUT3" ColumnName="OUT3" />
+                <ScalarProperty Name="IN4" ColumnName="IN4" />
+                <ScalarProperty Name="OUT4" ColumnName="OUT4" />
+                <ScalarProperty Name="IN5" ColumnName="IN5" />
+                <ScalarProperty Name="OUT5" ColumnName="OUT5" />
+                <ScalarProperty Name="IN6" ColumnName="IN6" />
+                <ScalarProperty Name="OUT6" ColumnName="OUT6" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Day_Status" ColumnName="Day_Status" />
+                <ScalarProperty Name="Mod_Field" ColumnName="Mod_Field" />
+                <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+                <ScalarProperty Name="ExMins" ColumnName="ExMins" />
+                <ScalarProperty Name="LateMins" ColumnName="LateMins" />
+                <ScalarProperty Name="GraceMins" ColumnName="GraceMins" />
+                <ScalarProperty Name="TZoneIn1" ColumnName="TZoneIn1" />
+                <ScalarProperty Name="WorkMins" ColumnName="WorkMins" />
+                <ScalarProperty Name="BreakMins" ColumnName="BreakMins" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobStat">
+            <EntityTypeMapping TypeName="TimeAttenModel.JobStat">
+              <MappingFragment StoreEntitySet="JobStat">
+                <ScalarProperty Name="StatCode" ColumnName="StatCode" />
+                <ScalarProperty Name="StatDesc" ColumnName="StatDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LEVELS">
+            <EntityTypeMapping TypeName="TimeAttenModel.LEVELS">
+              <MappingFragment StoreEntitySet="LEVELS">
+                <ScalarProperty Name="LvlCode" ColumnName="LvlCode" />
+                <ScalarProperty Name="LvlDesc" ColumnName="LvlDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NATION">
+            <EntityTypeMapping TypeName="TimeAttenModel.NATION">
+              <MappingFragment StoreEntitySet="NATION">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CallCode" ColumnName="CallCode" />
+                <ScalarProperty Name="Nation_Code" ColumnName="Nation_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OVERTIME">
+            <EntityTypeMapping TypeName="TimeAttenModel.OVERTIME">
+              <MappingFragment StoreEntitySet="OVERTIME">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="Overtime1" ColumnName="Overtime" />
+                <ScalarProperty Name="Cal_Overtime" ColumnName="Cal_Overtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualification">
+            <EntityTypeMapping TypeName="TimeAttenModel.Qualification">
+              <MappingFragment StoreEntitySet="Qualification">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="QualCode" ColumnName="QualCode" />
+                <ScalarProperty Name="QualDesc" ColumnName="QualDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REASONS">
+            <EntityTypeMapping TypeName="TimeAttenModel.REASONS">
+              <MappingFragment StoreEntitySet="REASONS">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="Reas_Code" ColumnName="Reas_Code" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="TDate" ColumnName="TDate" />
+                <ScalarProperty Name="isPaid" ColumnName="isPaid" />
+                <ScalarProperty Name="ReasNotes" ColumnName="ReasNotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RELIGIONS">
+            <EntityTypeMapping TypeName="TimeAttenModel.RELIGIONS">
+              <MappingFragment StoreEntitySet="RELIGIONS">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Relig_Code" ColumnName="Relig_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROT_TZONE">
+            <EntityTypeMapping TypeName="TimeAttenModel.ROT_TZONE">
+              <MappingFragment StoreEntitySet="ROT_TZONE">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="TZone_Code" ColumnName="TZone_Code" />
+                <ScalarProperty Name="TZone_Code2" ColumnName="TZone_Code2" />
+                <ScalarProperty Name="TZone_Code3" ColumnName="TZone_Code3" />
+                <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+                <ScalarProperty Name="HoliMode" ColumnName="HoliMode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCHED_TZONE">
+            <EntityTypeMapping TypeName="TimeAttenModel.SCHED_TZONE">
+              <MappingFragment StoreEntitySet="SCHED_TZONE">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="Timezone_Code" ColumnName="Timezone_Code" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="TDate" ColumnName="TDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUMRPT">
+            <EntityTypeMapping TypeName="TimeAttenModel.SUMRPT">
+              <MappingFragment StoreEntitySet="SUMRPT">
+                <ScalarProperty Name="AppUser" ColumnName="AppUser" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="FriOV" ColumnName="FriOV" />
+                <ScalarProperty Name="RegOV" ColumnName="RegOV" />
+                <ScalarProperty Name="Absent" ColumnName="Absent" />
+                <ScalarProperty Name="Late" ColumnName="Late" />
+                <ScalarProperty Name="SickReason" ColumnName="SickReason" />
+                <ScalarProperty Name="PayReason" ColumnName="PayReason" />
+                <ScalarProperty Name="OtherReason" ColumnName="OtherReason" />
+                <ScalarProperty Name="LateDays" ColumnName="LateDays" />
+                <ScalarProperty Name="Late1" ColumnName="Late1" />
+                <ScalarProperty Name="WHours" ColumnName="WHours" />
+                <ScalarProperty Name="WHoursStr" ColumnName="WHoursStr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TimeAttenModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEMP_TXT_DATA">
+            <EntityTypeMapping TypeName="TimeAttenModel.TEMP_TXT_DATA">
+              <MappingFragment StoreEntitySet="TEMP_TXT_DATA">
+                <ScalarProperty Name="ReaderID" ColumnName="ReaderID" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="P_Date" ColumnName="P_Date" />
+                <ScalarProperty Name="P_Time" ColumnName="P_Time" />
+                <ScalarProperty Name="TACode" ColumnName="TACode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEMPREASONS">
+            <EntityTypeMapping TypeName="TimeAttenModel.TEMPREASONS">
+              <MappingFragment StoreEntitySet="TEMPREASONS">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="Reas_Code" ColumnName="Reas_Code" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="TDate" ColumnName="TDate" />
+                <ScalarProperty Name="ReasNotes" ColumnName="ReasNotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEMPTMP">
+            <EntityTypeMapping TypeName="TimeAttenModel.TEMPTMP">
+              <MappingFragment StoreEntitySet="TEMPTMP">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="UsrTemplate" ColumnName="UsrTemplate" />
+                <ScalarProperty Name="Reject" ColumnName="Reject" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIME_SHEET">
+            <EntityTypeMapping TypeName="TimeAttenModel.TIME_SHEET">
+              <MappingFragment StoreEntitySet="TIME_SHEET">
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="P_Date" ColumnName="P_Date" />
+                <ScalarProperty Name="IN1" ColumnName="IN1" />
+                <ScalarProperty Name="OUT1" ColumnName="OUT1" />
+                <ScalarProperty Name="IN2" ColumnName="IN2" />
+                <ScalarProperty Name="OUT2" ColumnName="OUT2" />
+                <ScalarProperty Name="IN3" ColumnName="IN3" />
+                <ScalarProperty Name="OUT3" ColumnName="OUT3" />
+                <ScalarProperty Name="IN4" ColumnName="IN4" />
+                <ScalarProperty Name="OUT4" ColumnName="OUT4" />
+                <ScalarProperty Name="IN5" ColumnName="IN5" />
+                <ScalarProperty Name="OUT5" ColumnName="OUT5" />
+                <ScalarProperty Name="IN6" ColumnName="IN6" />
+                <ScalarProperty Name="OUT6" ColumnName="OUT6" />
+                <ScalarProperty Name="Timezone_Code" ColumnName="Timezone_Code" />
+                <ScalarProperty Name="Pending" ColumnName="Pending" />
+                <ScalarProperty Name="Calen_Day" ColumnName="Calen_Day" />
+                <ScalarProperty Name="Reas_Code" ColumnName="Reas_Code" />
+                <ScalarProperty Name="Last_Punch" ColumnName="Last_Punch" />
+                <ScalarProperty Name="Mod_Fields" ColumnName="Mod_Fields" />
+                <ScalarProperty Name="Day_Status" ColumnName="Day_Status" />
+                <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+                <ScalarProperty Name="TranCount" ColumnName="TranCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIMEZONE">
+            <EntityTypeMapping TypeName="TimeAttenModel.TIMEZONE">
+              <MappingFragment StoreEntitySet="TIMEZONE">
+                <ScalarProperty Name="Timezone_Code" ColumnName="Timezone_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IN1" ColumnName="IN1" />
+                <ScalarProperty Name="OUT1" ColumnName="OUT1" />
+                <ScalarProperty Name="IN2" ColumnName="IN2" />
+                <ScalarProperty Name="OUT2" ColumnName="OUT2" />
+                <ScalarProperty Name="IN3" ColumnName="IN3" />
+                <ScalarProperty Name="OUT3" ColumnName="OUT3" />
+                <ScalarProperty Name="Shifts" ColumnName="Shifts" />
+                <ScalarProperty Name="HalfDayOut" ColumnName="HalfDayOut" />
+                <ScalarProperty Name="Working_Days" ColumnName="Working_Days" />
+                <ScalarProperty Name="Half_Days" ColumnName="Half_Days" />
+                <ScalarProperty Name="Holi_Days" ColumnName="Holi_Days" />
+                <ScalarProperty Name="NightShift" ColumnName="NightShift" />
+                <ScalarProperty Name="HalfDayIn" ColumnName="HalfDayIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TOT_REAS">
+            <EntityTypeMapping TypeName="TimeAttenModel.TOT_REAS">
+              <MappingFragment StoreEntitySet="TOT_REAS">
+                <ScalarProperty Name="Re_Code" ColumnName="Re_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSHEETDATES">
+            <EntityTypeMapping TypeName="TimeAttenModel.TSHEETDATES">
+              <MappingFragment StoreEntitySet="TSHEETDATES">
+                <ScalarProperty Name="TSDate" ColumnName="TSDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSMODLOG">
+            <EntityTypeMapping TypeName="TimeAttenModel.TSMODLOG">
+              <MappingFragment StoreEntitySet="TSMODLOG">
+                <ScalarProperty Name="AppUser" ColumnName="AppUser" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="TSDate" ColumnName="TSDate" />
+                <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+                <ScalarProperty Name="ModTime" ColumnName="ModTime" />
+                <ScalarProperty Name="ModReas" ColumnName="ModReas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TZONERPT">
+            <EntityTypeMapping TypeName="TimeAttenModel.TZONERPT">
+              <MappingFragment StoreEntitySet="TZONERPT">
+                <ScalarProperty Name="AppUser" ColumnName="AppUser" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+                <ScalarProperty Name="P_Date" ColumnName="P_Date" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="HierCode" ColumnName="HierCode" />
+                <ScalarProperty Name="Desig" ColumnName="Desig" />
+                <ScalarProperty Name="Timezone_Code" ColumnName="Timezone_Code" />
+                <ScalarProperty Name="In1" ColumnName="In1" />
+                <ScalarProperty Name="Out1" ColumnName="Out1" />
+                <ScalarProperty Name="In2" ColumnName="In2" />
+                <ScalarProperty Name="Out2" ColumnName="Out2" />
+                <ScalarProperty Name="In3" ColumnName="In3" />
+                <ScalarProperty Name="Out3" ColumnName="Out3" />
+                <ScalarProperty Name="Shifts" ColumnName="Shifts" />
+                <ScalarProperty Name="HalfDayOut" ColumnName="HalfDayOut" />
+                <ScalarProperty Name="Working_Days" ColumnName="Working_Days" />
+                <ScalarProperty Name="Half_Days" ColumnName="Half_Days" />
+                <ScalarProperty Name="Holi_Days" ColumnName="Holi_Days" />
+                <ScalarProperty Name="NighShift" ColumnName="NighShift" />
+                <ScalarProperty Name="HalfDayIn" ColumnName="HalfDayIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="TimeAttenModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsSuperAdmin" ColumnName="IsSuperAdmin" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeekPlanner">
+            <EntityTypeMapping TypeName="TimeAttenModel.WeekPlanner">
+              <MappingFragment StoreEntitySet="WeekPlanner">
+                <ScalarProperty Name="PlanCode" ColumnName="PlanCode" />
+                <ScalarProperty Name="PlanDesc" ColumnName="PlanDesc" />
+                <ScalarProperty Name="TZones" ColumnName="TZones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMP_REC">
+            <EntityTypeMapping TypeName="TimeAttenModel.EMP_REC">
+              <MappingFragment StoreEntitySet="EMP_REC">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PlanCode" ColumnName="PlanCode" />
+                <ScalarProperty Name="GraceMins" ColumnName="GraceMins" />
+                <ScalarProperty Name="HierCode" ColumnName="HierCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="Reject" ColumnName="Reject" />
+                <ScalarProperty Name="UsrTemplate" ColumnName="UsrTemplate" />
+                <ScalarProperty Name="PunchOnce" ColumnName="PunchOnce" />
+                <ScalarProperty Name="FlexTime" ColumnName="FlexTime" />
+                <ScalarProperty Name="AutoFill" ColumnName="AutoFill" />
+                <ScalarProperty Name="Service_Stat" ColumnName="Service_Stat" />
+                <ScalarProperty Name="TZone_Status" ColumnName="TZone_Status" />
+                <ScalarProperty Name="Timezone_Code" ColumnName="Timezone_Code" />
+                <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+                <ScalarProperty Name="J_Date" ColumnName="J_Date" />
+                <ScalarProperty Name="B_Date" ColumnName="B_Date" />
+                <ScalarProperty Name="Mer_Stat" ColumnName="Mer_Stat" />
+                <ScalarProperty Name="QualCode" ColumnName="QualCode" />
+                <ScalarProperty Name="StatCode" ColumnName="StatCode" />
+                <ScalarProperty Name="Desigs_Code" ColumnName="Desigs_Code" />
+                <ScalarProperty Name="Relig_Code" ColumnName="Relig_Code" />
+                <ScalarProperty Name="Nation_Code" ColumnName="Nation_Code" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Online">
+            <EntityTypeMapping TypeName="TimeAttenModel.Online">
+              <MappingFragment StoreEntitySet="Online">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="OnlineTime" ColumnName="OnlineTime" />
+                <ScalarProperty Name="OnlinePin" ColumnName="OnlinePin" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Application">
+            <EntityTypeMapping TypeName="TimeAttenModel.User_Application">
+              <MappingFragment StoreEntitySet="User_Application">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupApplication">
+            <EntityTypeMapping TypeName="TimeAttenModel.GroupApplication">
+              <MappingFragment StoreEntitySet="GroupApplication">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="GroupRoleId" ColumnName="GroupRoleId" />
+                <ScalarProperty Name="GroupApplicationId" ColumnName="GroupApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupRole">
+            <EntityTypeMapping TypeName="TimeAttenModel.GroupRole">
+              <MappingFragment StoreEntitySet="GroupRole">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyUser">
+            <EntityTypeMapping TypeName="TimeAttenModel.CompanyUser">
+              <MappingFragment StoreEntitySet="CompanyUser">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permission">
+            <EntityTypeMapping TypeName="TimeAttenModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupPermission">
+            <EntityTypeMapping TypeName="TimeAttenModel.GroupPermission">
+              <MappingFragment StoreEntitySet="GroupPermission">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+                <ScalarProperty Name="GroupRoleId" ColumnName="GroupRoleId" />
+                <ScalarProperty Name="GroupPermissionId" ColumnName="GroupPermissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroup">
+            <EntityTypeMapping TypeName="TimeAttenModel.UserGroup">
+              <MappingFragment StoreEntitySet="UserGroup">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
